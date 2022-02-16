@@ -1,6 +1,10 @@
-
+<script>
+  const author = "Fabezio"
+  const project = "sveltekit_basic_template"
+</script>
 <footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+  <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+  <p><a href="https://github.com/{author}/{project}" target="_blank" >code source </a></p>
 </footer>
 
 <style>
@@ -11,8 +15,8 @@
     width: 100%;
     
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		flex-direction: row;
+		justify-content: space-evenly;
 		align-items: center;
 		padding: 16px;
 	}
