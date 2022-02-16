@@ -1,40 +1,59 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+import { each } from 'svelte/internal';
 	import logo from './svelte-logo.svg';
+	const links = [
+		{url: "", label: "Accueil"},
+		{url: "help", label: "Aide"},
+	]
 </script>
 
-<header>
+<!-- <header>
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
 			<img src={logo} alt="SvelteKit" />
 		</a>
-	</div>
+	</div> -->
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
+		<ul class="brand">
+			<li>
+
+				<a href="/">
+					basic template
+				</a>
+			</li>
+		</ul>
+		<!-- <svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
+		</svg> -->
 		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+			{#each links as {url, label}}
+			<li class:active={$page.url.pathname === '/'+url}><a sveltekit:prefetch href="/{url}">{label}</a></li>
+				
+			{/each}
+			<!-- <li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
 			<li class:active={$page.url.pathname === '/about'}>
 				<a sveltekit:prefetch href="/about">About</a>
 			</li>
 			<li class:active={$page.url.pathname === '/todos'}>
 				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>
+			</li> -->
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
+		<!-- <svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+		</svg> -->
 	</nav>
 
+	<!-- 
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
-	</div>
-</header>
+			TODO put something else here? github link?
+		</div>
+	</header>
+-->
 
 <style>
-	header {
+	/* header {
 		display: flex;
 		justify-content: space-between;
 	}
@@ -56,7 +75,7 @@
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
-	}
+	} */
 
 	nav {
 		display: flex;
@@ -64,7 +83,7 @@
 		--background: rgba(255, 255, 255, 0.7);
 	}
 
-	svg {
+	/* svg {
 		width: 2em;
 		height: 3em;
 		display: block;
@@ -72,8 +91,20 @@
 
 	path {
 		fill: var(--background);
-	}
+	} */
 
+	.brand {
+/* position: relative; */
+		padding: 0;
+		margin: 0;
+		height: 3em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		background: var(--background);
+		background-size: contain;
+	}
 	ul {
 		position: relative;
 		padding: 0;
@@ -104,7 +135,7 @@
 		border-top: var(--size) solid var(--accent-color);
 	}
 
-	nav a {
+	nav a, nav .brand {
 		display: flex;
 		height: 100%;
 		align-items: center;
