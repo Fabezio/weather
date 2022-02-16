@@ -4,14 +4,15 @@
 
 <script lang="ts">
 	import Counter from '$lib/Counter.svelte';
+	import Head from "$lib/Head.svelte";
 </script>
-
+<!-- 
 <svelte:head>
 	<title>Home</title>
-</svelte:head>
-
+</svelte:head> -->
+<Head title="Bienvenue!" />
 <section>
-	<h1>
+	<!-- <h1>
 		<div class="welcome">
 			<picture>
 				<source srcset="svelte-welcome.webp" type="image/webp" />
@@ -26,7 +27,7 @@
 		try editing <strong>src/routes/index.svelte</strong>
 	</h2>
 
-	<Counter />
+	<Counter /> -->
 </section>
 
 <style>
@@ -37,7 +38,7 @@
 		align-items: center;
 		flex: 1;
 	}
-
+/* 
 	h1 {
 		width: 100%;
 	}
@@ -55,5 +56,5 @@
 		height: 100%;
 		top: 0;
 		display: block;
-	}
+	} */
 </style>
