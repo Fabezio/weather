@@ -54,7 +54,7 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--heading-color);
+		color: var(--light-txt);
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;
@@ -64,7 +64,7 @@
 	}
 
 	a:hover {
-		color: var(--accent-color);
+		color: var(--light-txt);
 	}
 
 </style>

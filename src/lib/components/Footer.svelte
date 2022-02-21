@@ -3,8 +3,8 @@
   const project = "sveltekit_basic_template"
 </script>
 <footer>
-  <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-  <p><a href="https://github.com/{author}/{project}" target="_blank" >code source </a></p>
+  <div>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</div>
+  <div><a href="https://github.com/{author}/{project}" target="_blank" >code source </a></div>
 </footer>
 
 <style>
@@ -18,7 +18,9 @@
 		flex-direction: row;
 		justify-content: space-evenly;
 		align-items: center;
-		padding: 16px;
+		height: 3em;
+		/* padding: 20px; */
+		background: var(--bar-bg);
 	}
 
 	footer a {
@@ -27,7 +29,8 @@
 
   @media (min-width: 480px) {
 		footer {
-			padding: 16px 0;
+			height: 3em;
+			/* padding: 20px 0; */
 		}
 	}
 

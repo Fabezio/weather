@@ -1,6 +1,7 @@
 <script>
   export let width="14"
   export let title = "title"
+  
 </script>
 <div class="card" style="width: {width}em">
   <div class="card-head">
@@ -16,7 +17,7 @@
 
 <style>
   .card {
-    background: linear-gradient(90deg, rgba(0, 255, 255, .6) 2%, whitesmoke 4%);
+    background: linear-gradient(90deg, rgba(0, 255, 255, .6) 2%, #333 4%);
     border: 2px solid gray;
     border-radius: 8px;
     /* width: 10em; */
@@ -25,12 +26,14 @@
   .card-title {
     text-transform: uppercase;
     text-align: center;
+    color: whitesmoke;
   }
   .card-body {
     min-height: 5em;
   }
   .card-content {
     font-size: 1.1em;
+    padding: 0 0.5em;
     text-align: justify;
   }
   .card-head, .card-body {
@@ -40,5 +43,11 @@
   .card-footer {
     padding: 0 1em;
     text-align: center;
+    color: whitesmoke;
+  }
+  mark {
+    padding: 0 2px;
+    margin: 0 -2px;
+    background: goldenrod;
   }
 </style>
