@@ -1,13 +1,44 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
-	import Footer from "$lib/Footer.svelte"
+	import Header from '$lib/components/header/Header.svelte';
+	import {page} from "$app/stores"
+	import Footer from "$lib/components/Footer.svelte"
+	import Secret from "$lib/components/Secret.svelte"
+	// import toggleSecretCMP from "$lib/middlewares/toggleSecret"
+	import {secretReleased } from "$lib/store/secret.js"
 	import '../app.css';
+	
+	$secretReleased = false
+	function toggleSecretCMP() {
+  $secretReleased = !$secretReleased
+}
+
+	// let secretReleased = false
+	// function toggleSecretCMP() {
+	// 	$secretReleased = !$secretReleased
+	// 	// $page.url.searchParams.append()
+	// 	// $page.url.href = "http://localhost:3000/secret"
+	// 	// return {
+	// 	// 	status: 302,
+	// 	// 	url: {pathname: "/secret"}
+
+	// 	// }
+		
+	// }
+	// console.log($secretReleased)
 </script>
 
 <Header />
+<svelte:window on:dblclick|once|preventDefault={toggleSecretCMP} />
 
 <main>
-	<slot />
+	{#if $secretReleased}
+		 <!-- content here -->
+		 
+<Secret />
+	{:else}
+		 <!-- else content here -->
+		 <slot />
+	{/if}
 </main>
 
 <Footer />

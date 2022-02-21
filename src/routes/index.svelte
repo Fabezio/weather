@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
-	import Head from "$lib/Head.svelte";
+	// import Counter from '$lib/Counter.svelte';
+	import Head from "$lib/components/Head.svelte";
 </script>
 <!-- 
 <svelte:head>
