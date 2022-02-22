@@ -4,6 +4,8 @@
   import Head from '$lib/components/Head.svelte'
   const collection = [
     {title: "Ça marche", content: "C'est <mark>trop</mark> de la balle", footer: "on valide"},
+    {title: "Un peu de style", content: "Pour dynamiser tout ça", footer: "C'est pas mieux?"},
+    {title: "Et bien sûr…", content: "<div>Il faudra penser à créer une base de données</div>", footer: "Et tout le monde est content!"},
   ]
 </script>
 
@@ -18,7 +20,8 @@
 
     </div>
 
-    <span slot="footer" >{footer}</span>
+    <span slot="footer" ><button>Voir le détail</button></span>
+    <!-- <span slot="footer" >{footer}</span> -->
     </Card>
   {/each}
   <!-- <Card width="20" title="Carte 1" >
@@ -41,5 +44,13 @@
 </Grid>
 
 <style>
-  
+  button {
+    background: teal;
+    color: whitesmoke;
+    padding: 1em 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    border-radius: 7px;
+  }
 </style>
