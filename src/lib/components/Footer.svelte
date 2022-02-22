@@ -21,6 +21,7 @@
 		height: 3em;
 		/* padding: 20px; */
 		background: var(--bar-bg);
+		color: whitesmoke;
 	}
 
 	footer a {

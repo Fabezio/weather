@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-import { each } from 'svelte/internal';
-	import logo from './svelte-logo.svg';
 	import Brand from '$lib/components/header/Brand.svelte'
 	const links = [
 		{url: "", label: "Accueil"},
@@ -75,8 +73,8 @@ import { each } from 'svelte/internal';
 		align-items: center;
 		padding: 0 1em;
 		color: var(--light-txt);
-		font-weight: 700;
-		font-size: 0.8rem;
+		font-weight: 100;
+		font-size: 0.95rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;

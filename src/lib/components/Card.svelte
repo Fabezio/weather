@@ -17,25 +17,31 @@
 
 <style>
   .card {
-    background: linear-gradient(90deg, rgba(0, 255, 255, .6) 2%, #333 4%);
+    background:  #333 ;
+    /* background: linear-gradient(90deg, rgba(0, 255, 255, .6) 2%, #333 4%); */
     border: 2px solid gray;
     border-radius: 8px;
+    
     /* width: 10em; */
     /* max-width: 20em; */
   }
   .card-title {
     text-transform: uppercase;
     text-align: center;
-    color: whitesmoke;
+    color: var(--light-txt);
   }
   .card-body {
     min-height: 5em;
+    color: inherit;
   }
   .card-content {
     font-size: 1.1em;
     padding: 0 0.5em;
     text-align: justify;
+    color: var(--light-txt);
   }
+
+
   .card-head, .card-body {
     padding: 0 1em;
     border-bottom: 2px solid gray;
@@ -43,11 +49,7 @@
   .card-footer {
     padding: 0 1em;
     text-align: center;
-    color: whitesmoke;
+    color: var(--light-txt);
   }
-  mark {
-    padding: 0 2px;
-    margin: 0 -2px;
-    background: goldenrod;
-  }
+  
 </style>

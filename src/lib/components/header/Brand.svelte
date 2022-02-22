@@ -16,7 +16,7 @@
 
 	.brand {
 /* position: relative; */
-		padding: 0;
+		padding: 0 12px;
 		margin: 0;
 		height: 3em;
 		display: flex;
@@ -53,10 +53,10 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 1em;
+		padding: 0 12px;
 		color: var(--light-txt);
-		font-weight: 700;
-		font-size: 0.8rem;
+		font-weight: 100;
+		/* font-size: 0.8rem; */
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
