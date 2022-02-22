@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Header from '$lib/components/header/Header.svelte';
+	import Navbar from '$lib/components/header/Navbar.svelte';
 	import {page} from "$app/stores"
 	import Footer from "$lib/components/Footer.svelte"
 	import Secret from "$lib/components/Secret.svelte"
@@ -27,7 +27,7 @@
 	// console.log($secretReleased)
 </script>
 
-<Header />
+<Navbar />
 <svelte:window on:dblclick|once|preventDefault={toggleSecretCMP} />
 
 <main>
