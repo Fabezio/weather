@@ -1,7 +1,8 @@
 <script>
   import Card from "$lib/components/Card.svelte";
   import Grid from "$lib/components/Grid.svelte";
-  import Head from '$lib/components/Head.svelte'
+  import Head from '$lib/components/Head.svelte';
+  import Button from '$lib/components/Button.svelte';
   const collection = [
     {title: "Ça marche", content: "C'est <mark>trop</mark> de la balle", footer: "on valide"},
     {title: "Un peu de style", content: "Pour dynamiser tout ça", footer: "C'est pas mieux?"},
@@ -20,7 +21,7 @@
 
     </div>
 
-    <span slot="footer" ><button>Voir le détail</button></span>
+    <span slot="footer" ><Button background="whitesmoke">Voir le détail</Button></span>
     <!-- <span slot="footer" >{footer}</span> -->
     </Card>
   {/each}
@@ -44,13 +45,5 @@
 </Grid>
 
 <style>
-  button {
-    background: teal;
-    color: whitesmoke;
-    padding: 1em 0;
-    margin: 0;
-    width: 100%;
-    display: block;
-    border-radius: 7px;
-  }
+  
 </style>
