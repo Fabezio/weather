@@ -1,5 +1,5 @@
 <script>
-  let webTitle = "web title"
+  let webTitle = "Basic Template"
   export let title = ""
 </script>
 

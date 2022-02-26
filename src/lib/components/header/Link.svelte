@@ -1,7 +1,8 @@
 <script>
   import { page } from '$app/stores';
-  export let link
-  const {url, label} = link
+  export let url
+  export let label
+  // const {url, label} = link
 
 </script>
 

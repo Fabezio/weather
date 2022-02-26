@@ -5,10 +5,10 @@ import Link from "./Link.svelte"
 
 </script>
 <ul>
-			{#each links as link}
-			<!-- {#each links as {url, label}} -->
+			<!-- {#each links as link} -->
+			{#each links as {url, label}}
 			<!-- <li class:active={$page.url.pathname === '/'+url}><a sveltekit:prefetch href="/{url}">{label}</a></li> -->
-				<Link {link} />
+				<Link {url} {label} />
 			{/each}
 			
 		</ul>

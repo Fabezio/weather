@@ -2,13 +2,14 @@
 	import { page } from '$app/stores';
 	import Brand from '$lib/components/header/Brand.svelte'
 	import Navlinks from "./Navlinks.svelte"
+	import Clock from "./Clock.svelte"
 	const links = [
 		{url: "", label: "Accueil"},
 		{url: "collection", label: "Database"},
 		{url: "family", label: "Famille"},
 		{url: "help", label: "Aide"},
 	]
-	$: console.log($page.url)
+	$: console.log($page.url.pathname)
 </script>
 
 
@@ -23,6 +24,7 @@
 			{/each}
 			
 		</ul> -->
+		<Clock />
 	
 	</nav>
 
