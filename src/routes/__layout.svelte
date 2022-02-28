@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navbar from '$lib/components/header/Navbar.svelte';
-	import {page} from "$app/stores"
+	// import {page} from "$app/stores"
 	import Footer from "$lib/components/Footer.svelte"
 	import Secret from "$lib/components/Secret.svelte"
 	// import toggleSecretCMP from "$lib/middlewares/toggleSecret"
@@ -51,7 +51,7 @@
 		/* justify-content: space-between; */
 		padding: 1rem;
 		width: 100%;
-		max-width: 1024px;
+		/* max-width: 1024px; */
 		margin: 0 auto;
 		box-sizing: border-box;
 	}

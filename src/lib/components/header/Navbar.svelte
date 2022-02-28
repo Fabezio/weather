@@ -8,6 +8,8 @@
 		{url: "collection", label: "Database"},
 		{url: "family", label: "Famille"},
 		{url: "help", label: "Aide"},
+		{url: "weather", label: "Météo"},
+		{url: "news", label: "Actu"},
 	]
 	$: console.log($page.url.pathname)
 </script>

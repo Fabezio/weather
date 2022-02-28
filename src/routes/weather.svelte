@@ -7,7 +7,7 @@
   const city = "nantes"
   onMount(()=> fetchData())
   let weather =  []
-  const cities = "nantes paris marseilles".split(" ")
+  const cities = "nantes paris marseille lille blois tours".split(" ")
   async function fetchData () {
     for(let city of cities) {
 
@@ -79,7 +79,9 @@ text-align: justify;
   .grid-info {
     max-width: 15em;
   }
+  /* 
   .list-start {
-    /* min-width: 5em; */
+    min-width: 5em; 
   }
+  */
 </style>
