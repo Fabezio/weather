@@ -25,9 +25,9 @@ body .light-theme {
 
 .light-theme nav,
 .light-theme footer,
-.light-theme .card,
 .light-theme .grid-info,
 .light-theme pre,
+.light-theme .card,
 .light-theme figure {
   background: var(--light-bar);
 }

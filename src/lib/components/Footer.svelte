@@ -2,17 +2,25 @@
   const author = "Fabezio"
   const project = "sveltekit_basic_template"
 </script>
+<div class="pre-footer"></div>
 <footer>
   <div>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</div>
   <div><a href="https://github.com/{author}/{project}" target="_blank" >code source </a></div>
 </footer>
 
 <style>
+	.pre-footer {
+		height: 4em;
+		/* z-index: 0; */
+	}
   
 	footer {
-    /* position: absolute;
-    bottom: 0; */
+		perspective: 100;
+    position: fixed;
+    bottom: 0;
     width: 100%;
+		/* z-index: 9; */
+		/* margin-top: 7em; */
     
 		display: flex;
 		flex-direction: row;

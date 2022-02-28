@@ -8,7 +8,7 @@
   onMount(()=> fetchData())
   let news =  []
   const cities = "nantes paris marseille lille blois tours".split(" ")
-  const url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${apiKey}&from=2022-02_27&sortBy=popularity&category=health`
+  const url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${apiKey}&sortBy=popularity`
   async function fetchData () {
     const {data} = await axios.get(url)
     console.log(data.articles)
@@ -74,6 +74,8 @@ text-align: justify;
     display: grid;
     grid-gap: 1em;
     grid-template-columns: 300px 1fr;
+    border-radius: 0 8px 8px 0;
+    padding-right: 1em;
   }
   .frame {
     height: 200px;
@@ -85,7 +87,9 @@ text-align: justify;
   }
   a:hover {
     /* box-shadow: 1px 1px 0 gray; */
-    filter: brightness(125%);
+    filter: brightness(110%);
+    /* background: deepskyblue; */
+
 
   }
   figcaption {

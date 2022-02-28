@@ -1,6 +1,8 @@
 <script>
   import {onMount} from "svelte"
   import Head from "$lib/components/Head.svelte"
+  import Grid from "$lib/components/Grid.svelte"
+  import Card from "$lib/components/Card.svelte"
   import axios from "axios"
   
   const apiKey = "f6f03d4b430d972622542e12b63f852d"
@@ -35,52 +37,56 @@
 </script>
 <Head title="Quel temps fait-il?" />
 <!-- <h2></h2> -->
-<div class="meteo">
+<Grid>
+<!-- <div class="meteo"> -->
 {#each weather as {main, icon, temp, felt, minTemp, maxTemp, city}}
-<div class="grid-info">
 
+<!-- <div class="grid-info"> -->
 
+<Card width="17" title="Localité: {city}">
    <!-- content here -->
-   <h3>Localité: {city}</h3>
-   <img src={icon} alt="logo">
+   <div slot="content">
+   <!-- <h3>Localité: {city}</h3> -->
+   <div class="frame">
+     <img src={icon} alt="logo">
+
+   </div>
    <div>Temps: {main}</div>
    <div>Températures (en °C)</div>
-   <ul>
-     <li><div class="list-start">globale:</div> <div class="list-end">{temp}</div></li>
-     <li><div class="list-start">ressentie:</div> <div class="list-end">{felt}</div></li>
-     <li><div class="list-start">Min:</div> <div class="list-end">{minTemp}</div></li>
-     <li><div class="list-start">Max:</div> <div class="list-end">{maxTemp}</div></li>
-   </ul>
-  </div>
+   <section>
+     <div><span class="list-start">globale:</span> <span class="list-end">{temp}</span></div>
+     <div><span class="list-start">ressentie:</span> <span class="list-end">{felt}</span></div>
+     <div><span class="list-start">Min:</span> <span class="list-end">{minTemp}</span></div>
+     <div><span class="list-start">Max:</span> <span class="list-end">{maxTemp}</span></div>
+   </section>
+   </div>
+  </Card>
 {/each}
-</div>
+</Grid>
 
 <!-- <div>température: {weather.main.temp}</div> -->
 
 <style>
 
-  li {
+.frame {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+
+section {
+  padding-left: 12px;
+}
+section div {
+  display: grid;
+  grid-template-columns: 1fr  1fr;
+}
+div {
 text-align: justify;
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  /* li span {
-    position: relative;
-  } */
-  .meteo {
-    text-align: center;
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: repeat(2, 1fr);
-    /* justify-content: center; */
-  }
-  .grid-info {
-    max-width: 15em;
-  }
-  /* 
-  .list-start {
-    min-width: 5em; 
-  }
-  */
+display: grid;
+/* grid-gap: 1em; */
+grid-template-columns: 2fr, 1fr;
+}
+
 </style>

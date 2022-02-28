@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {onMount} from "svelte"
 	import Navbar from '$lib/components/header/Navbar.svelte';
 	// import {page} from "$app/stores"
 	import Footer from "$lib/components/Footer.svelte"
@@ -6,19 +7,24 @@
 	// import toggleSecretCMP from "$lib/middlewares/toggleSecret"
 	import {secretReleased } from "$lib/store/secret.js"
 	import '../app.css';
-	let hour = new Date().getHours()
-	let theme = "dark"
-	$: if(hour >=6 || hour < 22) theme="light"
+	let hour
+	// let theme
+	onMount(()=> {
+		hour = new Date().getHours()
+		// theme = "dark"
+		// if(hour >=6 || hour < 22) theme="light"
+
+	})
 	$secretReleased = false
 	function toggleSecretCMP() {
 		$secretReleased = !$secretReleased
 	}
 	$: console.log (hour)
-	$: console.log (theme)
+	// $: console.log (theme)
 
 </script>
 <svelte:window on:dblclick|once|preventDefault={toggleSecretCMP} />
-<div class="{theme}-theme">
+<div class="{hour >= 6 && hour < 22 ? 'light' : 'dark'}-theme">
 <Navbar />
 
 <main>
@@ -44,8 +50,9 @@
 		padding: 1rem;
 		width: 100%;
 		/* max-width: 1024px; */
-		margin: 0 auto;
+		margin: 3em auto;
 		box-sizing: border-box;
+		word-wrap: break-word;
 	}
 
 

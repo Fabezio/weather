@@ -6,7 +6,7 @@
 	const links = [
 		{url: "", label: "Accueil"},
 		{url: "collection", label: "Database"},
-		{url: "family", label: "Famille"},
+		// {url: "family", label: "Famille"},
 		{url: "help", label: "Aide"},
 		{url: "weather", label: "Météo"},
 		{url: "news", label: "Actu"},
@@ -29,6 +29,8 @@
 
 
 	nav {
+		position: fixed; 
+		top: 0;
 		display: flex;
 		height: 3em;
 		width: 100%;
