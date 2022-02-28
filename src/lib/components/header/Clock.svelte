@@ -27,11 +27,11 @@ clearInterval(interval)
 		margin: 0 12px 0 0;
 		height: 3em;
 		display: flex;
-    color: var(--light-txt);
+    /* color: var(--light-txt); */
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
+		/* background: var(--background); */
 		background-size: contain;
 
 	}

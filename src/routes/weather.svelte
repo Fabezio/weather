@@ -58,8 +58,7 @@
 <!-- <div>température: {weather.main.temp}</div> -->
 
 <style>
-  h3,
-  div, ul, li {color: var(--light-txt);}
+
   li {
 text-align: justify;
     display: grid;

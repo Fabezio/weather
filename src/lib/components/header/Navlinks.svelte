@@ -23,7 +23,7 @@ import Link from "./Link.svelte"
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
+		/* background: var(--background); */
 		background-size: contain;
 	}
 

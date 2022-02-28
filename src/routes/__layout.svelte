@@ -6,29 +6,20 @@
 	// import toggleSecretCMP from "$lib/middlewares/toggleSecret"
 	import {secretReleased } from "$lib/store/secret.js"
 	import '../app.css';
-	
+	let hour = new Date().getHours()
+	let theme = "dark"
+	$: if(hour >=6 || hour < 22) theme="light"
 	$secretReleased = false
 	function toggleSecretCMP() {
-  $secretReleased = !$secretReleased
-}
+		$secretReleased = !$secretReleased
+	}
+	$: console.log (hour)
+	$: console.log (theme)
 
-	// let secretReleased = false
-	// function toggleSecretCMP() {
-	// 	$secretReleased = !$secretReleased
-	// 	// $page.url.searchParams.append()
-	// 	// $page.url.href = "http://localhost:3000/secret"
-	// 	// return {
-	// 	// 	status: 302,
-	// 	// 	url: {pathname: "/secret"}
-
-	// 	// }
-		
-	// }
-	// console.log($secretReleased)
 </script>
-
-<Navbar />
 <svelte:window on:dblclick|once|preventDefault={toggleSecretCMP} />
+<div class="{theme}-theme">
+<Navbar />
 
 <main>
 	{#if $secretReleased}
@@ -42,6 +33,7 @@
 </main>
 
 <Footer />
+</div>
 
 <style>
 	main {

@@ -1,0 +1,33 @@
+body .dark-theme {
+  background: var(--dark-bg);
+}
+
+.dark-theme * {
+  color: var(--light-txt);
+}
+
+.dark-theme nav,
+.dark-theme footer,
+.dark-theme .card,
+.dark-theme .grid-info,
+.dark-theme pre,
+.dark-theme figure {
+  background: var(--dark-bar);
+}
+
+body .light-theme {
+  background: var(--light-bg);
+}
+
+.light-theme * {
+  color: var(--dark-txt);
+}
+
+.light-theme nav,
+.light-theme footer,
+.light-theme .card,
+.light-theme .grid-info,
+.light-theme pre,
+.light-theme figure {
+  background: var(--light-bar);
+}

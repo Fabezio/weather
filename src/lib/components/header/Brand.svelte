@@ -23,7 +23,7 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
+		/* background: var(--background); */
 		background-size: contain;
 	}
 	.brand img {
@@ -38,7 +38,7 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
+		/* background: var(--background); */
 		background-size: contain;
 	}
 
@@ -54,7 +54,7 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 12px;
-		color: var(--light-txt);
+		/* color: var(--light-txt); */
 		font-weight: 100;
 		/* font-size: 0.8rem; */
 		text-transform: uppercase;

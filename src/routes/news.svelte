@@ -50,9 +50,9 @@
 <!-- <div>température: {weather.main.temp}</div> -->
 
 <style>
-  h3,
+  /* h3,
   div
-   {color: var(--light-txt);}
+   {color: var(--light-txt);} */
   /* li {
 text-align: justify;
     display: grid;
@@ -106,7 +106,7 @@ text-align: justify;
     align-items: center;
     /* max-height: 50%; */
   }
-  img[alt="image"] {
+  img[alt] {
     /* content: "info non disponible" */
     background: gray;
     display: flex;

@@ -19,13 +19,7 @@
 	<nav>
 		<Brand />
 		<Navlinks {links} />
-		<!-- <ul>
-			{#each links as {url, label}}
-			<li class:active={$page.url.pathname === '/'+url}><a sveltekit:prefetch href="/{url}">{label}</a></li>
-				
-			{/each}
-			
-		</ul> -->
+		
 		<Clock />
 	
 	</nav>
@@ -39,7 +33,7 @@
 		height: 3em;
 		width: 100%;
 		justify-content: space-between;
-		background: var(--bar-bg);
+		/* background: var(--bar-bg); */
 		/* --background: rgba(255, 255, 255, 0.7); */
 	}
 

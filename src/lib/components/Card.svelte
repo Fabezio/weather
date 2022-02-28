@@ -17,7 +17,7 @@
 
 <style>
   .card {
-    background:  #333 ;
+    /* background:  #333 ; */
     /* background: linear-gradient(90deg, rgba(0, 255, 255, .6) 2%, #333 4%); */
     border: 2px solid gray;
     border-radius: 8px;
@@ -28,7 +28,7 @@
   .card-title {
     text-transform: uppercase;
     text-align: center;
-    color: var(--light-txt);
+    /* color: var(--light-txt); */
   }
   .card-body {
     min-height: 5em;
@@ -38,7 +38,7 @@
     font-size: 1.1em;
     padding: 0 0.5em;
     text-align: justify;
-    color: var(--light-txt);
+    /* color: var(--light-txt); */
   }
 
 
@@ -49,7 +49,7 @@
   .card-footer {
     padding: 0 1em;
     text-align: center;
-    color: var(--light-txt);
+    /* color: var(--light-txt); */
   }
   
 </style>

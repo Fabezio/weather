@@ -32,7 +32,7 @@ a {
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--light-txt);
+		/* color: var(--light-txt); */
 		font-weight: 100;
 		font-size: 0.95rem;
 		text-transform: uppercase;
