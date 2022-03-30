@@ -75,7 +75,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss" >
 	.todos {
 		width: 100%;
 		max-width: var(--column-width);
@@ -89,13 +89,13 @@
 
 	input {
 		border: 1px solid transparent;
+		&:focus-visible {
+			box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);
+			border: 1px solid #ff3e00 !important;
+			outline: none;
+		}
 	}
 
-	input:focus-visible {
-		box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);
-		border: 1px solid #ff3e00 !important;
-		outline: none;
-	}
 
 	.new input {
 		font-size: 28px;
@@ -119,12 +119,30 @@
 		filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
 		transform: translate(-1px, -1px);
 		transition: filter 0.2s, transform 0.2s;
+		input {
+			flex: 1;
+			padding: 0.5em 2em 0.5em 0.8em;
+			border-radius: 3px;
+		}
+	
+		button {
+			width: 2em;
+			height: 2em;
+			border: none;
+			background-color: transparent;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
 	}
 
 	.done {
 		transform: none;
 		opacity: 0.4;
 		filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.1));
+		.toggle {
+		background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 1.5L7.4375 14.5L1.5 8.5909' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	}
+
 	}
 
 	form.text {
@@ -134,20 +152,7 @@
 		flex: 1;
 	}
 
-	.todo input {
-		flex: 1;
-		padding: 0.5em 2em 0.5em 0.8em;
-		border-radius: 3px;
-	}
-
-	.todo button {
-		width: 2em;
-		height: 2em;
-		border: none;
-		background-color: transparent;
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-	}
+	
 
 	button.toggle {
 		border: 1px solid rgba(0, 0, 0, 0.2);
@@ -156,10 +161,7 @@
 		background-size: 1em auto;
 	}
 
-	.done .toggle {
-		background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 1.5L7.4375 14.5L1.5 8.5909' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-	}
-
+	
 	.delete {
 		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 5V22H19.5V5H4.5Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M10 10V16.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 10V16.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 5H22' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 5L9.6445 2H14.3885L16 5H8Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 		opacity: 0.2;

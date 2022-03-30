@@ -18,7 +18,6 @@
 	--light-txt: #fff;
 	--dark-txt: #000;
 
-
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
@@ -28,7 +27,6 @@
 body {
 	min-height: 100vh;
 	margin: 0;
-
 }
 
 body::before {
@@ -94,6 +92,13 @@ input,
 button {
 	font-size: inherit;
 	font-family: inherit;
+}
+
+#scrolling-msg mark {
+
+	background: transparent;
+	text-decoration: dashed;
+
 }
 
 button:focus:not(:focus-visible) {

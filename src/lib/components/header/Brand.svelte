@@ -1,70 +1,67 @@
 <ul class="brand">
-			<li>
-				<img src="favicon.png" height="32" alt="">
-			</li>
-			<li>
+    <li>
+        <img src="favicon.png" height="32" alt="">
+    </li>
+    <li>
 
-				<a href="/">
-					basic template
-				</a>
-			</li>
-		</ul>
+        <a href="/">
+            basic template
+        </a>
+    </li>
+</ul>
 
-<style>
+<style lang="scss" >
+.brand {
 
-	
+  padding: 0 12px;
+  margin: 0;
+  height: 3em;
+  display: flex;
+  justify-self: start;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 
-	.brand {
-/* position: relative; */
-		padding: 0 12px;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		/* background: var(--background); */
-		background-size: contain;
-	}
-	.brand img {
-		padding: 8px 0;
-	}
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		/* background: var(--background); */
-		background-size: contain;
-	}
+  background-size: contain;
+  img {
+    padding: 8px 0;
+  }
+  a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 12px;
 
-	li {
-		position: relative;
-		height: 100%;
-	}
+    font-weight: 100;
 
-	
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: color 0.2s linear;
+  }
+}
 
-	.brand a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 12px;
-		/* color: var(--light-txt); */
-		font-weight: 100;
-		/* font-size: 0.8rem; */
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
 
-	a:hover {
-		color: var(--light-txt);
-	}
+ul {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 
+  background-size: contain;
+}
+
+li {
+  position: relative;
+  height: 100%;
+}
+
+
+a:hover {
+  color: var(--light-txt);
+}
 </style>
