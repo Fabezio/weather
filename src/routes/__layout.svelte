@@ -6,11 +6,7 @@ import Tape from "$lib/components/Tape.svelte"
 import Navbar from '$lib/components/header/Navbar.svelte';
 
 import Footer from "$lib/components/Footer.svelte"
-import Secret from "$lib/components/Secret.svelte"
 
-import {
-  secretReleased
-} from "$lib/store/secret.js"
 import '../app.scss';
 let hour
 
@@ -27,11 +23,7 @@ const tapeMsg = [
 
 const newMsg = tapeMsg[Math.floor(Math.random() * tapeMsg.length)]
 let msg2display = newMsg
-$secretReleased = false
 
-function toggleSecretCMP() {
-  $secretReleased = !$secretReleased
-}
 
 $: console.log(msg2display)
 
@@ -46,21 +38,14 @@ onMount(() => {
 
 })
 </script>
-<svelte:window on:dblclick|once|preventDefault={toggleSecretCMP} />
+
 
 <div class="{themeColor}-theme">
     <Navbar />
 
 
     <main>
-        {#if $secretReleased}
-
-
-        <Secret />
-        {:else}
-
         <slot />
-        {/if}
     </main>
 
     <Footer />

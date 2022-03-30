@@ -10,10 +10,6 @@ const links = [{
     url: "",
     label: "Accueil"
   },
-  {
-    url: "collection",
-    label: "Database"
-  },
 
   {
     url: "help",
