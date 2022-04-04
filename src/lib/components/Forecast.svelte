@@ -3,6 +3,7 @@ export let width = "100%"
 export let title = "title"
 export let hasFooter =false
 </script>
+
 <div class="forecast" style="width: {width}">
     <div class="forecast-head">
         <h3 class="forecast-title">{title}</h3>
@@ -24,6 +25,8 @@ export let hasFooter =false
   border: 2px solid gray;
   border-radius: 8px;
   color: var(--light-txt);
+  margin: 0 auto 1em;
+  
 }
 
 .forecast-title {
@@ -60,4 +63,9 @@ export let hasFooter =false
   text-align: center;
   color: var(--light-txt);
 }
+/* @media screen and (min-width: 1024px) {
+  .forecast {
+    width: 1024px;
+  }
+} */
 </style>

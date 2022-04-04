@@ -3,34 +3,33 @@
   import Head from "$lib/components/Head.svelte"
   import Grid from "$lib/components/Grid.svelte"
   import Forecast from "$lib/components/Forecast.svelte"
-  import CurrentForecast0 from "$lib/components/CurrentForecast0.svelte"
+  import CurrentForecast from "$lib/components/CurrentForecast.svelte"
   import axios from "axios"
-
-  const dateFormatter = Intl.DateTimeFormat("fr", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })
 
   
   const apiKey = "f6f03d4b430d972622542e12b63f852d"
-  let city = ""
-  let entry = ""
+  const city = "nantes"
   onMount(()=> fetchData())
   let weather =  []
-  
-  // const cities = "nantes paris lille".split(" ")
-  // let gatheredData= []
-
-
+  const cities = "nantes paris lille".split(" ")
+  let gatheredData= []
   async function fetchData () {
-    // for(let city of cities) {
-      if(city.length) {city = ""; weather=[]}
-      city = entry
+    for(let city of cities) {
+
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`
       const {data} = await axios.get(url)
-      
+      const newData = {
+        lat: data.coord.lat,
+        lon: data.coord.lon,
+        main: data.weather[0].description,
+        temp: data.main.temp,
+        felt: data.main.feels_like,
+        icon: `https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${data.weather[0].icon}.png`,
+        minTemp: data.main.temp_min,
+        maxTemp: data.main.temp_max,
+        city: data.name
+        
+      }
       const gatherData = {
         icon: `https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${data.weather[0].icon}.png`,
         coord: data.coord,
@@ -40,26 +39,26 @@
         visibility: data.visibility,
         wind: data.wind,
         clouds: data.clouds,
-        // date: dateFormatter.format(data.dt),
+        date: data.dt,
         sys: data.sys,
         timezone: data.timezone,
         id: data.id,
         name: data.name,
         cod: data.cod
       }
-      // data = [..., gatherData]
+      gatheredData = [...gatheredData, gatherData]
 
-      weather = [...weather, gatherData]
+      weather = [...weather, newData]
       console.log(url)
-      // console.log(gatheredData)
-    // }
+      console.log(gatheredData)
+    }
 
     return weather
   }
   function convertCoord (val) {
     const deg = Math.floor(val)
     const mn = Math.floor(60*(val - deg))
-    const newCoord = `${deg}°${mn}'`
+    const newCoord = `${deg}° ${mn}'`
         return(newCoord)
   }
 
@@ -67,17 +66,13 @@
 
 </script>
 <Head title="Quel temps fait-il?" />
-<form on:submit|preventDefault={fetchData}>
-  <input bind:value={entry} placeholder="ville" />
-  <button type="submit">consulter</button>
-</form> 
 
-{#each weather as {coord, main, weather, icon}}
+{#each weather as {main, lon, lat, icon, temp, felt, minTemp, maxTemp, city}}
 
-<Forecast width="50%"  title="Localité: {city} ({convertCoord(coord.lon)} / {convertCoord(coord.lat)})">
+<Forecast width="50%"  title="Localité: {city} ({convertCoord( lon)}/{convertCoord(lat)})">
   <div slot="content">
   <section>
-    <CurrentForecast0 {main} {icon} {weather} />
+    <CurrentForecast {main} {temp} {icon} />
 
   </section>
 </div> 
@@ -86,9 +81,7 @@
 
 <style lang="scss" >
   
-form {
-  margin: 0 auto 2em;
-}
+
 
 
 section {
