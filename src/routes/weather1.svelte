@@ -2,8 +2,8 @@
   import {onMount} from "svelte"
   import Head from "$lib/components/Head.svelte"
   import Grid from "$lib/components/Grid.svelte"
-  import Forecast from "$lib/components/Forecast.svelte"
-  import CurrentForecast from "$lib/components/CurrentForecast.svelte"
+  import Forecast from "$lib/components/forecast/Forecast.svelte"
+  import CurrentForecast from "$lib/components/forecast/CurrentForecast.svelte"
   import axios from "axios"
 
   
@@ -69,7 +69,8 @@
 
 {#each weather as {main, lon, lat, icon, temp, felt, minTemp, maxTemp, city}}
 
-<Forecast width="50%"  title="Localité: {city} ({convertCoord( lon)}/{convertCoord(lat)})">
+<!-- <Forecast width="50%"  title="Localité: {city} ({convertCoord( lon)}/{convertCoord(lat)})"> -->
+<Forecast width="50%"  >
   <div slot="content">
   <section>
     <CurrentForecast {main} {temp} {icon} />

@@ -17,6 +17,7 @@
     "sass": "^1.49.9",
     "svelte": "^3.46.0",
     "svelte-check": "^2.2.6",
+    "svelte-geolocation": "^0.3.0",
     "svelte-preprocess": "^4.10.1",
     "tslib": "^2.3.1",
     "typescript": "~4.5.4"
@@ -27,6 +28,8 @@
     "@lukeed/uuid": "^2.0.0",
     "axios": "^0.26.0",
     "cookie": "^0.4.1",
+    "dateformat": "^5.0.3",
+    "fast-geoip": "^1.1.66",
     "svelte-carousel": "^1.0.17-rc4"
   }
 }

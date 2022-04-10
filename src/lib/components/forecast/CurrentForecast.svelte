@@ -17,9 +17,9 @@
      
       </div>
        
-     </article>
+</article>
 
-     <style>
+<style>
        .current-forecast {
     display: grid;
     grid-template-columns: 1fr 2fr;

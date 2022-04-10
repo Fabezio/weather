@@ -2,12 +2,15 @@
 import {
   onMount
 } from "svelte"
+import {newCoords} from "$lib/store/geo"
+
 import Tape from "$lib/components/Tape.svelte"
 import Navbar from '$lib/components/header/Navbar.svelte';
 
 import Footer from "$lib/components/Footer.svelte"
 
 import '../app.scss';
+$newCoords = [];
 let hour
 
 let themeColor
@@ -25,7 +28,7 @@ const newMsg = tapeMsg[Math.floor(Math.random() * tapeMsg.length)]
 let msg2display = newMsg
 
 
-$: console.log(msg2display)
+// $: console.log(msg2display)
 
 onMount(() => {
   hour = new Date().getHours()
@@ -57,7 +60,7 @@ main {
   display: flex;
   flex-direction: column;
 
-  padding: 1rem;
+  /* padding: 1rem; */
   width: 100%;
 
   margin: 0 auto 3em;

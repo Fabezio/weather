@@ -10,8 +10,9 @@ const apiKey = "4cd48c56bd1e413e864513c64d58954a"
 onMount(() => fetchData())
 let news = []
 const sortOption='relevancy'
+const categories = "science technology health business entertainment".split(" ")
 // const cities = "nantes paris marseille lille blois tours".split(" ")
-const url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${apiKey}&sortBy=${sortOption}`
+const url = `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${apiKey}&sortBy=${sortOption}&category=science`
 async function fetchData() {
   const {
     data

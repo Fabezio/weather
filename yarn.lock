@@ -528,6 +528,11 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+dateformat@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-5.0.3.tgz#fe2223eff3cc70ce716931cb3038b59a9280696e"
+  integrity sha512-Kvr6HmPXUMerlLcLF+Pwq3K7apHpYmGDVqrxcDasBg86UcKeTSNWbEzU8bwdXnxnR44FtMhJAxI4Bov6Y/KUfA==
+
 debug@4, debug@^4.1.0, debug@^4.3.1:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
@@ -879,6 +884,11 @@ fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
+
+fast-geoip@^1.1.66:
+  version "1.1.66"
+  resolved "https://registry.yarnpkg.com/fast-geoip/-/fast-geoip-1.1.66.tgz#2d7ad58081378bcd33d1df147d750b0d56447f12"
+  integrity sha512-jg34hIDbs7Ft4Xt9fc7oCnRb0IwK9v+7XqQi/gVzDoDIRlbUPWFeG7fmIFTb9ipKQLASRnQmpFHo7JWMixXRaw==
 
 fast-glob@^3.2.7:
   version "3.2.11"
@@ -2241,6 +2251,11 @@ svelte-check@^2.2.6:
     source-map "^0.7.3"
     svelte-preprocess "^4.0.0"
     typescript "*"
+
+svelte-geolocation@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/svelte-geolocation/-/svelte-geolocation-0.3.0.tgz#560f404565c8b489a2ecd087a60c1ae930532390"
+  integrity sha512-6SV3vENzyWSiLRLT2uVgl7ZHxU1XY0Uy4dSKHLg3iedagjIoL+u/BJylxuQY2i5ZdJl9gg+09B3oKfUrknExJQ==
 
 svelte-hmr@^0.14.9:
   version "0.14.9"

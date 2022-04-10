@@ -1,12 +1,14 @@
 <script>
 export let width = "100%"
-export let title = "title"
+// export let title = "title"
 export let hasFooter =false
+// export let coord
 </script>
 
 <div class="forecast" style="width: {width}">
-    <div class="forecast-head">
-        <h3 class="forecast-title">{title}</h3>
+  <div class="forecast-head" style="width: {width}">
+  <slot name="header" />
+        
     </div>
     <div class="forecast-body">
         <p class="forecast-content"><slot name="content"/></p>
@@ -18,35 +20,36 @@ export let hasFooter =false
     {/if}
 </div>
 
-<style globals>
+<style globals lang="scss">
+@import "../../../vars.scss";
 .forecast {
-  background: var(--dark-bg) ;
+  background: $dark-bg;
 
   border: 2px solid gray;
   border-radius: 8px;
-  color: var(--light-txt);
+  color: $light-txt;
   margin: 0 auto 1em;
   
 }
 
-.forecast-title {
-  color: var(--light-txt);
-  text-transform: uppercase;
-  text-align: left;
-}
+// .forecast-title {
+//   color: $light-txt;
+//   text-transform: uppercase;
+//   text-align: left;
+// }
 
 .forecast-body {
-  color: var(--light-txt);
+  color: $light-txt;
 }
 
 .forecast-content {
-  color: var(--light-txt);
+  color: $light-txt;
   font-size: 1.1em;
   padding: 0 0.5em;
   text-align: justify;
 }
 .forecast-body {
-  color: var(--light-txt);
+  color: $light-txt;
   
 
 }
@@ -54,14 +57,19 @@ export let hasFooter =false
 .forecast-head,
 .forecast-body {
   padding: 0 1em;
-  color: var(--light-txt);
+  color: $light-txt;
 }
+/* .forecast-head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr;
+  justify-content: between;
+} */
 
 .forecast-footer {
   border-top: 2px solid gray;
   padding: 0 1em;
   text-align: center;
-  color: var(--light-txt);
+  color: $light-txt;
 }
 /* @media screen and (min-width: 1024px) {
   .forecast {
