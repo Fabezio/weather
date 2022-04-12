@@ -79,13 +79,13 @@
   // grid-template-rows: 1fr 1fr;
   grid-gap: 1em;
   grid-template-areas:
-    "image" "temp" "pressure",
-    "image" "days" "days";
+    "image temp pressure"
+    "image days days";
   color: $light-txt;
 }
 
 .frame {
-  grid-area: "image";
+  grid-area: image;
   display: flex;
   justify-content: center;
   margin-bottom: 12px;
@@ -99,10 +99,10 @@
   }
 }
 .temp {
-  grid-area: "temp";
+  grid-area: temp;
 }
 .pressure {
-  grid-area: "pressure";
+  grid-area: pressure;
 }
 
 div, div * {
@@ -121,7 +121,7 @@ div span {
     padding-top: 1em;
   }
   grid-column: span 2 / -1;
-  grid-area: "days";
+  grid-area: days;
 }
 
 // article {

@@ -1,6 +1,6 @@
 <script>
-  import Modal from "$lib/components/Modal.svelte"
-  import Button from "$lib/components/Button.svelte"
+  import Modal from "$lib/components/UX/Modal.svelte"
+  import Button from "$lib/components/UX/Button.svelte"
   $: showModal=false
   function toggleModal() {
     return showModal = !showModal
@@ -12,7 +12,7 @@
 </Modal>
 
 {:else}
-<Button background="#0aF" color="#111" on:click={toggleModal}>click me</Button>
+<Button background="#0aF" color="#111" on:click={toggleModal} >click me</Button>
 
 {/if}
 <style>

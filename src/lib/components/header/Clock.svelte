@@ -29,7 +29,7 @@ div {
   height: 3em;
   display: flex;
 
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   list-style: none;
 

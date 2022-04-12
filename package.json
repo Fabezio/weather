@@ -28,8 +28,6 @@
     "@lukeed/uuid": "^2.0.0",
     "axios": "^0.26.0",
     "cookie": "^0.4.1",
-    "dateformat": "^5.0.3",
-    "fast-geoip": "^1.1.66",
-    "svelte-carousel": "^1.0.17-rc4"
+    "dateformat": "^5.0.3"
   }
 }

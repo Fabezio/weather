@@ -3,6 +3,7 @@
   const dispatch = createEventDispatcher()
 export let background = "olive"
 export let color = "whitesmoke"
+export let width
 const backgrounds = [
   "cyan",
   "whitesmoke",
@@ -16,20 +17,21 @@ const backgrounds = [
   "deepskyblue",
   "skyblue",
 ]
+export let size = "100%"
 $: for (let bg of backgrounds) {
   if (background == bg) color = "black"
 
 }
 </script>
 
-<button on:click={()=> dispatch("click")} style="background:{background}; color: {color}"><slot /></button>
+<button on:click={()=> dispatch("click")} style="background:{background}; color: {color}; width={size}; padding: {width} auto"><slot /></button>
 
 <style>
 button {
   font-weight: 600;
   background: teal;
   color: whitesmoke;
-  padding: 1em 0;
+  padding: 1em 1em;
   margin: 0;
   width: 100%;
 

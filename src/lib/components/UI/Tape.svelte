@@ -1,7 +1,7 @@
 <script>
   export let msg = "Jusqu'ici tout va bien..."
   $: innerWidth=0
-$: duration = innerWidth / 60
+$: duration = (innerWidth / 60).toString()
 
 </script>
 <svelte:window bind:innerWidth={innerWidth} ></svelte:window>

@@ -2,8 +2,8 @@
 import {
   onMount
 } from "svelte"
-import Head from "$lib/components/Head.svelte"
 import axios from "axios"
+import Head from "$lib/components/UI/Head.svelte"
 
 const apiKey = "4cd48c56bd1e413e864513c64d58954a"
 

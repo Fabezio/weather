@@ -2,15 +2,16 @@
 import {
   onMount
 } from "svelte"
-import {newCoords} from "$lib/store/geo"
+// import {newCoords} from "$lib/store/geo"
+import {page} from "$app/stores"
 
-import Tape from "$lib/components/Tape.svelte"
 import Navbar from '$lib/components/header/Navbar.svelte';
 
-import Footer from "$lib/components/Footer.svelte"
+// import Tape from "$lib/components/UI/Tape.svelte"
+import Footer from "$lib/components/UI/Footer.svelte"
 
 import '../app.scss';
-$newCoords = [];
+// $newCoords = [];
 let hour
 
 let themeColor
@@ -44,14 +45,17 @@ onMount(() => {
 
 
 <div class="{themeColor}-theme">
+  {#if $page.url.pathname != "/security"}
     <Navbar />
+    {/if}
 
 
     <main>
         <slot />
     </main>
-
+{#if $page.url.pathname != "/security"}
     <Footer />
+    {/if}
 </div>
 
 <style>

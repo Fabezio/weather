@@ -27,6 +27,10 @@ const links = [{
     url: "blog",
     label: "Blog"
   },
+  {
+    url: "security",
+    label: "Sécurité"
+  },
 ]
 function toggleNavDisplay() {
   showLinks = !showLinks

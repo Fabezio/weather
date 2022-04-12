@@ -4,7 +4,7 @@ export const prerender = true;
 
 <script lang="ts" >
 
-  import Head from "$lib/components/Head.svelte";
+  import Head from "$lib/components/UI/Head.svelte";
 </script>
 
 <Head title="Bienvenue!" />

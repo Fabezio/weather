@@ -1,7 +1,7 @@
 <script>
-import Card from "$lib/components/Card.svelte";
+import Card from "$lib/components/UI/Card.svelte";
 
-import Head from "$lib/components/Head.svelte"
+import Head from "$lib/components/UI/Head.svelte"
 
 const family = [{
     rank: "mari",

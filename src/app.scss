@@ -133,6 +133,9 @@ body .light-theme {
     background: $light-bar;
   }
 }
+.banner * {
+  color: $dark;
+}
 
 @media (min-width: 720px) {
   h1 {

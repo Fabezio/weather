@@ -1,7 +1,7 @@
 <script>
   import {onMount} from "svelte"
-  import Head from "$lib/components/Head.svelte"
-  import Grid from "$lib/components/Grid.svelte"
+  import Head from "$lib/components/UI/Head.svelte"
+  import Grid from "$lib/components/UI/Grid.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte"
   import CurrentForecast0 from "$lib/components/forecast/CurrentForecast0.svelte"
   import axios from "axios"
@@ -110,26 +110,31 @@ import { api } from "./todos/_api";
 </form>  -->
 
 {#each weather as {now, days}}
+<div class="gap">
 
-<Forecast width="100%" >
-  <div slot="header">
-    <div class="forecast-title">
-      <h3 class="city" >{city.toUpperCase()}</h3>
-          <h3 class="coords" ><em>{convertCoord(now.coord.lon)} / {convertCoord(now.coord.lat)}</em></h3>
-
+  <Forecast width="100%" >
+    <div slot="header">
+      <div class="forecast-title">
+        <h3 class="city" >{city.toUpperCase()}</h3>
+            <h3 class="coords" ><em>{convertCoord(now.coord.lon)} / {convertCoord(now.coord.lat)}</em></h3>
+  
+      </div>
     </div>
-  </div>
-  <div slot="content">
-  <section>
-    <CurrentForecast0 main={now.main} icon={now.icon} weather={now.weather} {days} />
-
-  </section>
-</div> 
-  </Forecast>
+    <div slot="content">
+    <section>
+      <CurrentForecast0 main={now.main} icon={now.icon} weather={now.weather} {days} />
+  
+    </section>
+  </div> 
+    </Forecast>
+</div>
 {/each}
 
 <style lang="scss" >
   @import "../vars.scss";
+  .gap {
+    margin: 1em;
+  }
   
 // form {
 //   margin: 0 auto 2em;
