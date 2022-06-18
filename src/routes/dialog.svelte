@@ -1,6 +1,6 @@
 <script>
-  import Modal from "$lib/components/UX/Modal.svelte"
-  import Button from "$lib/components/UX/Button.svelte"
+  import Modal from "$lib/components/UI/Modal.svelte"
+  import Button from "$lib/components/UI/Button.svelte"
   $: showModal=false
   function toggleModal() {
     return showModal = !showModal

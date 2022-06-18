@@ -1,7 +1,7 @@
 <script>
   import Clock from "$lib/components/header/Clock.svelte"
   import Head from "$lib/components/UI/Head.svelte"
-  import Button from "$lib/components/UX/Button.svelte"
+  import Button from "$lib/components/UI/Button.svelte"
   
   import HandleEntry from "./HandleEntry.svelte"
   import Worker from "./Worker.svelte"

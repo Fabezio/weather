@@ -2,12 +2,13 @@
 import {
   onMount
 } from "svelte"
+import Container from "$lib/components/UI/Container.svelte";
 // import {newCoords} from "$lib/store/geo"
 import {page} from "$app/stores"
 
 import Navbar from '$lib/components/header/Navbar.svelte';
 
-// import Tape from "$lib/components/UI/Tape.svelte"
+import Tape from "$lib/components/UI/Tape.svelte"
 import Footer from "$lib/components/UI/Footer.svelte"
 
 import '../app.scss';
@@ -38,7 +39,7 @@ onMount(() => {
 
   const msgInterval = setInterval(()=> {msg2display = newMsg }, 60000)
   return msg2display
-  clearInterval(msgInterval)
+  // clearInterval(msgInterval)
 
 })
 </script>
@@ -47,14 +48,19 @@ onMount(() => {
 <div class="{themeColor}-theme">
   {#if $page.url.pathname != "/security"}
     <Navbar />
-    {/if}
+    <!-- <Tape/> -->
 
 
-    <main>
+
+    <Container>
         <slot />
-    </main>
-{#if $page.url.pathname != "/security"}
+    </Container>
+
     <Footer />
+    {:else} 
+    <!-- <main> -->
+      <slot/>
+    <!-- </main> -->
     {/if}
 </div>
 

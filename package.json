@@ -28,6 +28,7 @@
     "@lukeed/uuid": "^2.0.0",
     "axios": "^0.26.0",
     "cookie": "^0.4.1",
-    "dateformat": "^5.0.3"
+    "dateformat": "^5.0.3",
+    "dotenv": "^16.0.1"
   }
 }
