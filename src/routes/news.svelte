@@ -62,7 +62,7 @@ $: console.table(news)
 </div>
 
 
-
+<!-- 
 <style lang="scss" >
 .news {
   text-align: center;
@@ -123,4 +123,4 @@ img[alt] {
   color: red;
 }
 
-</style>
+</style> -->

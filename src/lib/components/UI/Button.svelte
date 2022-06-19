@@ -30,7 +30,7 @@ $: for (let bg of backgrounds) {
 </script>
 
 <button on:click={()=> dispatch("click")} style="background:{background}; color: {color}; padding:{gap}px; width: {block? "100%": width} ; border-radius: {parseInt(gap) / 2}px;"><slot /></button>
-
+<!-- 
 <style>
 button {
   font-weight: 600;
@@ -45,4 +45,4 @@ button {
   text-transform: uppercase;
   font-size: 1em;
 }
-</style>
+</style> -->

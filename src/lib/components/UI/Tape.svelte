@@ -9,7 +9,7 @@ $: duration = (innerWidth / 60).toString()
   <p 
   id="scrolling-msg" style={`animation-duration: ${parseInt(duration)}s`} >{@html msg}</p>
 </div>
-
+<!-- 
 <style>
 #tape {
 
@@ -41,4 +41,4 @@ $: duration = (innerWidth / 60).toString()
     transform: translateX(-100%)
   }
 }
-</style>
+</style> -->

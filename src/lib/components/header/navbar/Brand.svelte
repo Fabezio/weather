@@ -1,4 +1,9 @@
-<ul class="brand">
+<script>
+  const title = "basic template"
+</script>
+
+<a class="navbar-brand text-uppercase" href="/">{title}</a>
+<!-- <ul class="brand">
     <li>
         <img src="favicon.png" height="32" alt="">
     </li>
@@ -8,8 +13,8 @@
             basic template
         </a>
     </li>
-</ul>
-
+</ul> -->
+<!-- 
 <style lang="scss" >
 .brand {
 
@@ -64,4 +69,4 @@ li {
 a:hover {
   color: var(--light-txt);
 }
-</style>
+</style> -->

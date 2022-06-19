@@ -1,4 +1,5 @@
 <script lang="ts">
+  import 'bootstrap-scss/bootstrap.scss';
 import {
   onMount
 } from "svelte"
@@ -6,12 +7,12 @@ import Container from "$lib/components/UI/Container.svelte";
 // import {newCoords} from "$lib/store/geo"
 import {page} from "$app/stores"
 
-import Navbar from '$lib/components/header/Navbar.svelte';
+import Nav from '$lib/components/header/Nav.svelte';
 
 import Tape from "$lib/components/UI/Tape.svelte"
 import Footer from "$lib/components/UI/Footer.svelte"
 
-import '../app.scss';
+// import '../app.css';
 // $newCoords = [];
 let hour
 
@@ -47,7 +48,7 @@ onMount(() => {
 
 <div class="{themeColor}-theme">
   {#if $page.url.pathname != "/security"}
-    <Navbar />
+    <Nav />
     <!-- <Tape/> -->
 
 
@@ -64,19 +65,7 @@ onMount(() => {
     {/if}
 </div>
 
-<style>
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
-  /* padding: 1rem; */
-  width: 100%;
-
-  margin: 0 auto 3em;
-  box-sizing: border-box;
-  word-wrap: break-word;
-}
-
-@media (min-width: 480px) {}
+<style globals lang="scss" >
+// @import '../scss/bootstrap.scss';
+/*  */
 </style>

@@ -16,7 +16,7 @@ export let hasFooter =false
     </div>
     {/if}
 </div>
-
+<!-- 
 <style>
 .card {
   border: 2px solid gray;
@@ -58,4 +58,4 @@ export let hasFooter =false
   text-align: center;
 
 }
-</style>
+</style> -->

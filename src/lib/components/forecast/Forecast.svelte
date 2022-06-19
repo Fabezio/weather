@@ -4,7 +4,7 @@ export let width = "100%"
 export let hasFooter =false
 // export let coord
 </script>
-
+<!-- 
 <div class="forecast" style="width: {width}">
   <div class="forecast-head" style="width: {width}">
   <slot name="header" />
@@ -76,4 +76,4 @@ export let hasFooter =false
     width: 1024px;
   }
 } */
-</style>
+</style> -->

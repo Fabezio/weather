@@ -20,7 +20,7 @@ onMount(() => {
 <div>
     {formatter.format(time)}
 </div>
-
+<!-- 
 <style>
 div {
   position: relative;
@@ -36,4 +36,4 @@ div {
   background-size: contain;
 
 }
-</style>
+</style> -->

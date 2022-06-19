@@ -69,7 +69,7 @@
   </div >
   <!-- </div> -->
 </article>
-
+<!-- 
 <style lang="scss" >
 @import "../../../vars.scss";
 .current-forecast {
@@ -132,4 +132,4 @@ div span {
 //     padding-left: 1em;
 //   }
 // }
-</style>
+</style> -->

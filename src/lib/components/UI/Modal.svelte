@@ -1,10 +1,12 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  // let closeModal = false
   const dispatch = createEventDispatcher()
 </script>
-
-<div id="modal-container"></div>
-<div id="modal-box">
+<!-- {#if !closeModal} -->
+<div id="modal-container"  />
+<div id="modal-box" >
+  <!-- <button on:click={()=> {closeModal = true; console.log(closeModal)}} id="close">&times;</button> -->
   <button on:click={()=> dispatch("close")} id="close">&times;</button>
   <div id="modal-body">
 
@@ -17,7 +19,8 @@
 
 
 </div>
-
+<!-- {/if} -->
+<!-- 
 <style lang="scss">
 #modal-container {
   position: absolute;
@@ -56,4 +59,4 @@
 
 }
 
-</style>
+</style> -->

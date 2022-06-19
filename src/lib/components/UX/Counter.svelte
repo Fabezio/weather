@@ -35,7 +35,7 @@ function modulo(n: number, m: number) {
         </svg>
     </button>
 </div>
-
+<!-- 
 <style lang="scss">
 .counter {
   display: flex;
@@ -101,4 +101,4 @@ path {
   top: -100%;
   user-select: none;
 }
-</style>
+</style> -->

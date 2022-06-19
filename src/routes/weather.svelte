@@ -138,7 +138,7 @@
     </Forecast>
   </div>
 {/each}
-
+<!-- 
 <style lang="scss">
   @import "../vars.scss";
   .gap {
@@ -173,4 +173,4 @@
 
     grid-template-columns: 2fr 1fr;
   }
-</style>
+</style> -->

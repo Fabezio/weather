@@ -17,7 +17,7 @@
     Développé avec <a href="https://svelte.dev" target="_blank">svelte </a>
   </div>
 </footer>
-
+<!-- 
 <style lang="scss">
   footer {
     perspective: 100;
@@ -42,4 +42,4 @@
       height: 3em;
     }
   }
-</style>
+</style> -->

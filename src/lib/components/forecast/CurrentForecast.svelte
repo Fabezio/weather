@@ -18,7 +18,7 @@
       </div>
        
 </article>
-
+<!-- 
 <style>
        .current-forecast {
     display: grid;
@@ -40,4 +40,4 @@
     color: var(--light-txt);
 
   }
-     </style>
+     </style> -->

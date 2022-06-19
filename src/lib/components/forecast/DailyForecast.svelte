@@ -38,7 +38,7 @@
     {/each}
   </div>
 
-
+<!-- 
 <style lang="scss" >
   @import "../../../vars.scss";
   // h1 {
@@ -81,4 +81,4 @@
       word-wrap: wrap;
     }
   }
-</style>
+</style> -->

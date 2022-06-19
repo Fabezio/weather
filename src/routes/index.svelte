@@ -7,15 +7,25 @@ export const prerender = true;
 
   import Head from "$lib/components/UI/Head.svelte";
   import Button from "$lib/components/UI/Button.svelte"
+  import Modal from "$lib/components/UI/Modal.svelte";
+  import Alert from "$lib/components/UI/Alert.svelte";
+  let openModal = false
 </script>
 
 <Head title="Bienvenue!" />
 <section>
-  <Button width="10em">Click me</Button>
-  <!-- <Container /> -->
-   
+  <Alert variant="warning" rounded>
+    <a href="#" class="alert-link">
+      <strong>Attention!</strong>
+      </a>
+    hello
+    </Alert>
+  <Button on:click={()=>openModal=true} width="10em">Click me</Button>
+  {#if openModal}
+  <Modal on:close={()=>openModal=false} />
+   {/if}
 </section>
-
+<!-- 
 <style>
 section {
   display: flex;
@@ -25,4 +35,4 @@ section {
   flex: 1;
 }
 
-</style>
+</style> -->

@@ -1,19 +1,19 @@
 <script>
 $:innerWidth=0
 </script>
-  <svelte:window bind:innerWidth={innerWidth} />
+  <!-- <svelte:window bind:innerWidth={innerWidth} /> -->
 
 <!-- </svelte:window> -->
-<pre>
+<!-- <pre>
   {innerWidth}
 
-</pre>
-<div>
+</pre> -->
+<div class="container">
   <slot />
 </div>
-<style>
+<!-- <style>
   div {
     width: 1024px;
     margin: 0 auto;
   }
-</style>
+</style> -->
