@@ -6,4 +6,4 @@ export let title = ""
 <svelte:head>
   <title>{webTitle} | {title}</title>
 </svelte:head>
-<h1>{title.toUpperCase()}</h1>
+<h1 class="text-center my-4">{title.toUpperCase()}</h1>

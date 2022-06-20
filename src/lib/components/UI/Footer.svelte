@@ -3,19 +3,22 @@
   const project = "sveltekit_basic_template";
 </script>
 
-<footer>
-  <div>
+<footer class="bottom-fixed">
+<div class="row text-center">
+  <div class="col">
     visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit
   </div>
-  <div>
+  <div class="col">
     <a href="https://github.com/{author}/{project}" target="_blank"
       >code source
     </a>
   </div>
   <!-- <div>Développé avec <a href="https://svelte.dev" target="_blank" ></a></div> -->
-  <div>
+  <div class="col">
     Développé avec <a href="https://svelte.dev" target="_blank">svelte </a>
   </div>
+  
+</div>
 </footer>
 <!-- 
 <style lang="scss">

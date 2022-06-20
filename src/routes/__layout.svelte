@@ -11,6 +11,7 @@ import Nav from '$lib/components/header/Nav.svelte';
 
 import Tape from "$lib/components/UI/Tape.svelte"
 import Footer from "$lib/components/UI/Footer.svelte"
+let loading = true
 
 // import '../app.css';
 // $newCoords = [];
@@ -38,11 +39,16 @@ onMount(() => {
 
   themeColor = hour >= 6 && hour < 22 ? 'light' : 'dark'
 
-  const msgInterval = setInterval(()=> {msg2display = newMsg }, 60000)
-  return msg2display
+  // const msgInterval = setInterval(()=> {msg2display = newMsg }, 60000)
+  // return msg2display
+  setTimeout(() => {
+    // clearInterval(msgInterval)
+    loading=false
+  }, 60000)
   // clearInterval(msgInterval)
 
 })
+$: console.log($page.url.pathname)
 </script>
 
 
@@ -52,10 +58,16 @@ onMount(() => {
     <!-- <Tape/> -->
 
 
-
+  {#if $page.url.pathname != "/weather"}
     <Container>
         <slot />
-    </Container>
+      </Container>
+      {:else}
+      <div>
+        <slot />
+
+      </div>
+  {/if}
 
     <Footer />
     {:else} 
