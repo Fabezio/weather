@@ -1,10 +1,11 @@
 <script>
-  import DailyForecast from './DailyForecast.svelte'
+  import DailyForecast from './Daily.svelte'
   // export let temp
   export let main
   export let icon
   export let weather
   export let days
+  export let dataSet
   // export let sys
   // export let date
   // const dateFormatter = Intl.DateTimeFormat("fr", {
@@ -21,6 +22,7 @@
 
 <!-- <div>Date: {date}</div> -->
 <!-- <div>lever: {timeFormatter.format(sys.sunrise)}, crépuscule: {timeFormatter.format(sys.sunset)}</div> -->
+
 
 <article class="current-forecast">
   <div  class="frame">
@@ -63,7 +65,7 @@
   <div  class="other-forecasts">
     <!-- <hr style="color: maroon;"> -->
     <div>
-      <DailyForecast {days} />
+      <!-- <DailyForecast {days} /> -->
 
     </div>
   </div >

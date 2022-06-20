@@ -1,15 +1,15 @@
 <script>
   import df, {masks} from "dateformat"
-  export let days
+  // export let day
   const theseDays = "aujourd'hui demain après-demain".split(" ")
   // console.log(theseDays)
   const formatDate = val=> formatter.format(val)
-  theseDays.map((day, idx)=> {
+  // theseDays.map((day, idx)=> {
     // if(days[idx] <= day)
-    days[idx].thisDay=day
+    // days[idx].thisDay=day
 
-  })
-  console.log(new Date().getTime().toString().length)
+  // })
+  // console.log(new Date().getTime().toString().length)
   const formatter = Intl.DateTimeFormat("fr", {
     weekday: "short",
   day: "numeric",
@@ -23,19 +23,19 @@
 
   <div class="days">
 
-    {#each days as {weather, temp, thisDay,dt}, i}
+    <!-- {#each days as {weather, temp, thisDay,dt}, i}
 
     <div class="thisday">
       {#if i < 7}
-      <!-- {@debug (new Date(dt))} -->
+      {@debug (new Date(dt))}
       <img src="{weather.icon}" width="64" title={weather.description} alt="image">
-      <!-- <div>{ new Date(dt)}</div> -->
+      <div>{ new Date(dt)}</div>
       <div><small>{ formatDate(dt*1000)}</small></div>
         
       {/if}
-    </div>
+    </div> -->
     <!-- <hr> -->
-    {/each}
+    <!-- {/each} -->
   </div>
 
 <!-- 

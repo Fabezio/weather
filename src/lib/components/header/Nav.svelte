@@ -4,7 +4,7 @@
 // } from '$app/stores';
 import * as Navbar from './navbar'
 // import Navlinks from "./Navlinks.svelte"
-// import Clock from "./Clock.svelte"
+import Clock from "../Clock.svelte"
 // import Toggler from "./Toggler.svelte"
 // import Form from "./Form.svelte"
 let showLinks = false
@@ -38,18 +38,26 @@ $: innerWidth= 0
 <svelte:head>
   <script src="https://kit.fontawesome.com/347214cdeb.js" crossorigin="anonymous"></script>
 </svelte:head>
-<svelte:window bind:innerWidth></svelte:window>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <svelte:window bind:innerWidth></svelte:window> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <Navbar.Brand />
 
-    <Navbar.Toggler on:click={toggleNavDisplay} />
+    <Navbar.Toggler on:toggle={toggleNavDisplay} />
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class:collapse={showLinks=false} class=" navbar-collapse" id="navbarSupportedContent">
+      <!-- {#if showLinks && innerWidth} -->
       <Navbar.Navlinks links={links} />
+      <!-- {/if} -->
       
+    </div>
+    <!-- <div>
       <Navbar.Form />
-      
+
+    </div> -->
+    <div class="text-light">
+      <Clock />
+
     </div>
   </div>
 </nav>

@@ -29,7 +29,7 @@ $: for (let bg of backgrounds) {
 }
 </script>
 
-<button on:click={()=> dispatch("click")} style="background:{background}; color: {color}; padding:{gap}px; width: {block? "100%": width} ; border-radius: {parseInt(gap) / 2}px;"><slot /></button>
+<button on:click={()=> dispatch("click")} style="background:{background}; color: {color}; padding:{gap}px; width: {block? "100%": width} ; border-radius: {(parseInt(gap) / 2).toString()}px;"><slot /></button>
 <!-- 
 <style>
 button {
