@@ -164,8 +164,8 @@
 <div class="card bg-dark text-light" width="100%">
   <Forecast {fc}>
     <div class="card-header">
-      <h3 class="city">{city.toUpperCase()}</h3>
-      <h3 class="coords">
+      <h3 class="city"><i class="bi-geo mr-2"></i>{city.toUpperCase()}</h3>
+      <h3 class="coords"><i class="bi-geo-alt mr-2"></i>
         <em>
           {convertCoord(fc.coords.lat, "S", "N")} / {convertCoord(fc.coords.lon, "O", "E")}
           </em>

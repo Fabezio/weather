@@ -7,7 +7,7 @@
   // const theseDays = "aujourd'hui demain après-demain".split(" ")
   // console.table(day)
 </script>
-<div on:click={()=> dispatch("select")} class="col-lg-1">
+<div on:click={()=> dispatch("select")} class="col-md">
   <img src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/{day.weather.icon}.png' width="100" alt="icone" >
   <div class="text-center text-light">{dateCompactFormatter.format(day.dt*1000)}</div>
 

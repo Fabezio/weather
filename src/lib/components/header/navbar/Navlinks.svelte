@@ -5,9 +5,9 @@
 export let links
 </script>
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  {#each links as {url, label}}
+  {#each links as {url, label, icon}}
 
-    <Links.Link {url} {label} />
+    <Links.Link {url} {label} {icon} />
     {/each}
         
         <!-- <Links.MenuDropdown /> -->

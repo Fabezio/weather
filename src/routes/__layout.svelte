@@ -1,5 +1,6 @@
 <script lang="ts">
   import 'bootstrap-scss/bootstrap.scss';
+  import 'bootstrap-icons/font/bootstrap-icons.css';
 import {
   onMount
 } from "svelte"
@@ -41,10 +42,10 @@ onMount(() => {
 
   // const msgInterval = setInterval(()=> {msg2display = newMsg }, 60000)
   // return msg2display
-  setTimeout(() => {
-    // clearInterval(msgInterval)
-    loading=false
-  }, 60000)
+  // setTimeout(() => {
+  //   // clearInterval(msgInterval)
+  //   loading=false
+  // }, 60000)
   // clearInterval(msgInterval)
 
 })

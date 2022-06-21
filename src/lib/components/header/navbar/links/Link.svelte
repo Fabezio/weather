@@ -4,12 +4,13 @@ import {
 } from '$app/stores';
 export let url ="#"
 export let label = "disabled"
+export let icon="link"
 export let disabled = false
 
 </script>
 {#if !disabled}
 <li class="nav-item text-uppercase" class:active={$page.url.pathname === '/'+url}>
-          <a class="nav-link" aria-current="page" sveltekit:prefetch href="/{url}" >{label}</a>
+          <a class="nav-link" aria-current="page" sveltekit:prefetch href="/{url}" ><i class="bi-{icon} mr-2"></i>{label}</a>
         </li>
 <!-- <li class:active={$page.url.pathname === '/'+url} class:disabled={disabled} class="nav-item"><a class="dropdown-item" sveltekit:prefetch href="/{url}" >{label}</a></li> -->
 {:else}

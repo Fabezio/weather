@@ -10,22 +10,29 @@ import Clock from "../Clock.svelte"
 let showLinks = false
 const links = [{
     url: "",
-    label: "Accueil"
+    label: "Accueil",
+    icon: "house"
+
   }, {
     url: "help",
-    label: "Aide"
+    label: "Aide",
+    icon: "question"
   }, {
     url: "weather",
-    label: "Météo"
+    label: "Météo",
+    icon: "thermometer"
   }, {
     url: "news",
-    label: "Actu"
+    label: "Actu",
+    icon: "newspaper"
   }, {
     url: "blog",
-    label: "Blog"
+    label: "Blog",
+    icon: "wordpress"
   }, {
     url: "security",
-    label: "Sécurité"
+    label: "Sécurité",
+    icon: "shield-shaded"
   },
 ]
 function toggleNavDisplay() {

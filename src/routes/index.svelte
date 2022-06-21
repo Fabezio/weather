@@ -3,6 +3,7 @@ export const prerender = true;
 </script>
 
 <script lang="ts" >
+  // import 'bootstrap-icons'
   
 
   import Head from "$lib/components/UI/Head.svelte";
@@ -24,6 +25,7 @@ export const prerender = true;
   {#if openModal}
   <Modal on:close={()=>openModal=false} />
    {/if}
+   
 </section>
 <!-- 
 <style>

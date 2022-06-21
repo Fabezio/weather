@@ -13,11 +13,11 @@
 
     <div class="col-md-10 offset-md-1">
       <div class="card-body text-light">
-        <h5 class="card-title">date: {dateFormatter.format(dataSet.dt*1000)}</h5>
+        <h5 class="card-title"><i class="mr-2 bi-calendar"></i> {dateFormatter.format(dataSet.dt*1000)}</h5>
         <!-- <h5 class="card-title">{dataSet.name}</h5> -->
-        <p class="card-text">{dataSet.weather.description}</p>
-        <p class="card-text">Température: {dataSet.temp}°C</p>
-        <p class="card-text">Ressenti: {dataSet.feels_like}°C</p>
+        <p class="card-text"><i class="mr-2 bi-rainbow"></i> {dataSet.weather.description}</p>
+        <p class="card-text"><i class="mr-2 bi-thermometer"></i> {dataSet.temp}°C</p>
+        <p class="card-text"><i class="mr-2 bi-thermometer-snow"></i> {dataSet.feels_like}°C</p>
       </div>
     </div>
 
