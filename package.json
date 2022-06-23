@@ -34,6 +34,7 @@
     "dateformat": "^5.0.3",
     "dotenv": "^16.0.1",
     "filesize": "^9.0.9",
-    "sveltable": "^0.0.6"
+    "sveltable": "^0.0.6",
+    "sveltestrap": "^5.9.0"
   }
 }

@@ -1,84 +1,59 @@
 <script lang="ts">
+  import {Styles, Container} from "sveltestrap"
   import 'bootstrap-scss/bootstrap.scss';
   import 'bootstrap-icons/font/bootstrap-icons.css';
 import {
   onMount
 } from "svelte"
-import Container from "$lib/components/UI/Container.svelte";
+
+import Breakpoints from "$lib/components/UI/Breakpoints.svelte"
+// import Container from "$lib/components/UI/Container.svelte";
 // import {newCoords} from "$lib/store/geo"
+import {theme} from "$lib/store/theme"
 import {page} from "$app/stores"
+// import {page} from "$app/stores"
 
 import Nav from '$lib/components/header/Nav.svelte';
 
 import Tape from "$lib/components/UI/Tape.svelte"
 import Footer from "$lib/components/UI/Footer.svelte"
-let loading = true
+// let loading = true
 
 // import '../app.css';
 // $newCoords = [];
-let hour
+// let hour
 
-let themeColor
+$: $theme = {bg: "dark", txt: "light", linkColor: "warning"}
 
-const tapeMsg = [
-  "Ceci est un test de défilement horizontal; ne vous inquiétez pas, tout va bien.",
-  "Si vous avez des commentaires ou suggestions à nous soumettre, veuillez remplir le formulaire adéquat.",
-  "J'ai un serpent dans ma botte!",
-  "Ce que j'ai à vous dire est <strong>très</strong> important. Veuiller prêter l'oreille avec la plus <big>grande</big> <mark>attention</mark>.",
-  "Bien entendu, rien ne presse, libre à vous <big>😃</big>",
-  "J'ai un costume <s>rayé</s>. Qui suis-je? <big><strong>Scarface</strong> 😱</big>"
-]
-
-const newMsg = tapeMsg[Math.floor(Math.random() * tapeMsg.length)]
-let msg2display = newMsg
-
-
-// $: console.log(msg2display)
-
-onMount(() => {
-  hour = new Date().getHours()
-
-  themeColor = hour >= 6 && hour < 22 ? 'light' : 'dark'
-
-  // const msgInterval = setInterval(()=> {msg2display = newMsg }, 60000)
-  // return msg2display
-  // setTimeout(() => {
-  //   // clearInterval(msgInterval)
-  //   loading=false
-  // }, 60000)
-  // clearInterval(msgInterval)
-
-})
 $: console.log($page.url.pathname)
+$: innerWidth = 0
+$: innerHeight = 0
+$: console.log(innerWidth, innerHeight)
 </script>
 
+<Breakpoints />
+<Styles />
 
-<div class="{themeColor}-theme">
-  {#if $page.url.pathname != "/security"}
+    {#if $page.url.pathname != "/security"}
     <Nav />
     <!-- <Tape/> -->
-
-
-  {#if $page.url.pathname != "/weather"}
+    
+    
+    {#if $page.url.pathname != "/weather"}
     <Container>
-        <slot />
-      </Container>
-      {:else}
-      <div>
-        <slot />
+      <slot />
 
-      </div>
-  {/if}
+        </Container>
+        {:else}
+        <div>
+          <slot />
+  
+        </div>
+        {/if}
+        
+        <Footer />
+        {:else} 
 
-    <Footer />
-    {:else} 
-    <!-- <main> -->
-      <slot/>
-    <!-- </main> -->
-    {/if}
-</div>
+        <slot/>
 
-<style globals lang="scss" >
-// @import '../scss/bootstrap.scss';
-/*  */
-</style>
+      {/if}

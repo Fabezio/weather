@@ -1,70 +1,64 @@
 <script >
-// import {
-//   page
-// } from '$app/stores';
-import * as Navbar from './navbar'
-// import Navlinks from "./Navlinks.svelte"
-import Clock from "../Clock.svelte"
-// import Toggler from "./Toggler.svelte"
-// import Form from "./Form.svelte"
-let showLinks = false
-const links = [{
-    url: "",
-    label: "Accueil",
-    icon: "house"
+  // import {bk} from "$lib/store/breakpoints"
+  import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+  } from 'sveltestrap';
+  let isOpen = false;
+  import {theme} from "$lib/store/theme"
 
-  }, {
-    url: "help",
-    label: "Aide",
-    icon: "question"
-  }, {
-    url: "weather",
-    label: "Météo",
-    icon: "thermometer"
-  }, {
-    url: "news",
-    label: "Actu",
-    icon: "newspaper"
-  }, {
-    url: "blog",
-    label: "Blog",
-    icon: "wordpress"
-  }, {
-    url: "security",
-    label: "Sécurité",
-    icon: "shield-shaded"
-  },
-]
-function toggleNavDisplay() {
-  showLinks = !showLinks
-}
-// $: console.log($page.url.pathname)
-$: innerWidth= 0
+  function handleUpdate(event) {
+    isOpen = event.detail.isOpen;
+  }
+  import {
+  page
+} from '$app/stores';
+import {links} from "./links"
+// import Clock from "../Clock.svelte"
+$: console.log($theme)
 </script>
 
 <svelte:head>
   <script src="https://kit.fontawesome.com/347214cdeb.js" crossorigin="anonymous"></script>
 </svelte:head>
-<!-- <svelte:window bind:innerWidth></svelte:window> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <Navbar.Brand />
 
-    <Navbar.Toggler on:toggle={toggleNavDisplay} />
-    
-    <div class:collapse={showLinks=false} class=" navbar-collapse" id="navbarSupportedContent">
-      <!-- {#if showLinks && innerWidth} -->
-      <Navbar.Navlinks links={links} />
-      <!-- {/if} -->
-      
-    </div>
-    <!-- <div>
-      <Navbar.Form />
+  
 
-    </div> -->
-    <div class="text-light">
-      <Clock />
+<Navbar color="dark" dark expand="md">
+  <NavbarBrand href="/">Basic Template</NavbarBrand>
+  <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+  <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+    <Nav class="ms-auto" navbar>
+      {#each links as {url, label, icon}}
+      <NavItem>
+        <NavLink active={$page.url.pathname == `/${url}`} href="/{url}"><i class="bi-{icon} mr-2" />{label}</NavLink>
+      </NavItem>
+        
+      {/each}
+     
+      <!-- <Dropdown nav inNavbar>
+        <DropdownToggle nav caret>Options</DropdownToggle>
+        <DropdownMenu end>
+          <DropdownItem>Option 1</DropdownItem>
+          <DropdownItem>Option 2</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Reset</DropdownItem>
+        </DropdownMenu>
+      </Dropdown> -->
+      <NavItem>
 
-    </div>
-  </div>
-</nav>
+      </NavItem>
+    </Nav>
+  </Collapse>
+  <!-- <Clock /> -->
+</Navbar>
+<!-- </div> -->

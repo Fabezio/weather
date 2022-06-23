@@ -1,4 +1,5 @@
 <script>
+  import {bk} from "$lib/store/breakpoints";
 import {
   page
 } from '$app/stores';
@@ -6,10 +7,15 @@ export let url ="#"
 export let label = "disabled"
 export let icon="link"
 export let disabled = false
+// let textAlign = "left"
+
+// $: if ($bk== "xs" || $bk="sm") {
+
+// }
 
 </script>
 {#if !disabled}
-<li class="nav-item text-uppercase" class:active={$page.url.pathname === '/'+url}>
+<li class="nav-item text-uppercase mx-auto" class:active={$page.url.pathname === '/'+url}>
           <a class="nav-link" aria-current="page" sveltekit:prefetch href="/{url}" ><i class="bi-{icon} mr-2"></i>{label}</a>
         </li>
 <!-- <li class:active={$page.url.pathname === '/'+url} class:disabled={disabled} class="nav-item"><a class="dropdown-item" sveltekit:prefetch href="/{url}" >{label}</a></li> -->

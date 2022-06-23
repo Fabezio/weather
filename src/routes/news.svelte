@@ -2,6 +2,7 @@
 import {
   onMount
 } from "svelte"
+import Spinner from "$lib/components/UI/Spinner.svelte"
 import axios from "axios"
 import Head from "$lib/components/UI/Head.svelte"
 
@@ -17,7 +18,7 @@ async function fetchData() {
   const {
     data
   } = await axios.get(url)
-  console.log(data.articles)
+  // console.log(data.articles)
   data.articles.map(article => {
     news = [...news, article]
 
@@ -28,35 +29,47 @@ async function fetchData() {
 }
 $: console.log(url)
 
-$: console.table(news)
+// $: console.table(news)
 </script>
 <Head title="Quoi d'neuf, docteur?" />
+<Spinner db={news} />
 
 <div class="news">
     {#each news as {title, urlToImage, content, description, url, author}}
-    <a href={url} target="_blank" >
-        <figure >
-            <div class="frame">
-                <img src={urlToImage} alt="{title}">
+    <div class="card">
 
-            </div>
-            <figcaption>
-                <h3>{title}</h3>
-                {#if typeof content=="string"}
-                  <p><q>{content}</q></p>
-                  {:else}
-                  <p class="txt-red">Texte non disponible</p>
-                {/if}
-                {#if typeof author=="string"}
-                <p ><em>{author}</em></p>
+      <a class="link" href={url} target="_blank" >
+        <div class="row">
+          <div class="col-4">
+            <img class="card-img-top" src={urlToImage} alt="{title}">
 
-                  {:else}
-                  <p class="txt-red">Auteur non cité</p>
-                {/if}
+          </div>
+          <div class="col-8">
+            <h3>{title}</h3>
+            {#if typeof content=="string"}
+              <p><q>{content}</q></p>
+              {:else}
+              <p class="txt-red">Texte non disponible</p>
+            {/if}
+            {#if typeof author=="string"}
+            <p ><em>{author}</em></p>
+    
+              {:else}
+              <p class="txt-red">Auteur non cité</p>
+            {/if}
 
-            </figcaption>
-        </figure>
-    </a>
+          </div>
+        </div>
+          <!-- <figure >
+              <div class="frame">
+  
+              </div>
+              <figcaption>
+  
+              </figcaption>
+          </figure> -->
+      </a>
+    </div>
     {/each}
 
 </div>
