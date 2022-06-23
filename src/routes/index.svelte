@@ -10,6 +10,7 @@ export const prerender = true;
   import Button from "$lib/components/UI/Button.svelte"
   import Modal from "$lib/components/UI/Modal.svelte";
   import Alert from "$lib/components/UI/Alert.svelte";
+  
   let openModal = false
 </script>
 
