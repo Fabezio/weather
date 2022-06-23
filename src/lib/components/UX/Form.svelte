@@ -7,7 +7,7 @@
   let entry = "";
   let cities = []
   function validateCities() {
-  if (entry.length ) cities = entry.split(" ")
+  if (entry.length ) cities = entry.split(", ")
 }
   function handleKey(e) {
     if (e.Key == "Enter") validateCities()

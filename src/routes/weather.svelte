@@ -1,6 +1,7 @@
 <script>
 
   import Spinner from "$lib/components/UI/Spinner.svelte"
+  import SvelTable from "sveltable"
   
   import {Container} from 'sveltestrap';
   import Head from "$lib/components/UI/Head.svelte";
@@ -77,3 +78,9 @@
   
   {/each}
 </Container>
+{#if $weather.length}
+  <pre>
+    {JSON.stringify($weather, null, 4)}
+  </pre>
+<!-- <SvelTable dataSet={$weather[0].now} /> -->
+{/if}

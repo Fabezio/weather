@@ -11,3 +11,9 @@ export const dateCompactFormatter = Intl.DateTimeFormat("fr", {
     month: "2-digit",
     // year: "2-digit",
   });
+export const timeFormatter = Intl.DateTimeFormat("fr", {
+    // weekday: "narrow",
+    hour: "2-digit",
+    minute: "2-digit",
+    // year: "2-digit",
+  });
