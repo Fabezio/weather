@@ -10,36 +10,16 @@
     const i = Math.round(rad*6/Math.PI)
     // const 
     const cardinal = [
-      "N", "NNE", "NE", "ENE", 
-      "E", "ESE", "SE", "SSE", 
-      "S", "SSO", "SO", "OSO", 
-      "O", "ONO", "NO", "NNO"
+      "N", "NNO", "NO", "ONO", 
+      "E", "OSO", "SO", "SSO", 
+      "S", "SSE", "SE", "ESE", 
+      "O", "ENE", "NE", "NNE"
     ]
     console.log( i)
     
     // console.log( cardinal[Math.round(i)])
     return cardinal[i]
-    // const cosinus = Math.cos(val)
-    // const sinus =  Math.sin(val)
-    // const tanA = Math.tan(val)
-    // const cosA= Math.cos(val)
-    // const sinA= Math.sin(val)
-    // const coSin = [Math.abs(cosA) ==1, tanA < 1 ]
-    // return coSin
-    // return angles.compass(val)
-  //   const diff = 11.25
-  //  for(let i = 0; i < 16; i++) {
-
-  //  }
-  //   if (val <= 22.5 && val >= 337.5) return "N"
-  //   else if (val <= 45) return "NE"
-  //   else if (val <= 90) return "E"
-  //   else if (val <= 135) return "SE"
-  //   else if (val <= 180) return "S"
-  //   else if (val <= 225) return "SO"
-  //   else if (val <= 270) return "O"
-  //   else if (val <= 315) return "NO"
-  //   else return ""
+    
   }
   
 </script>
@@ -53,7 +33,7 @@
       <div class="row">
         <div class="card-body text-light">
           
-          <h5 class="card-title"><i class="mr-2 bi-calendar"></i> {dateFormatter.format(dataSet.dt*1000)}</h5>
+          <h5 class="card-title"><i class="mr-2 bi-calendar"></i> {dateFormatter.format(dataSet.dt*1000)}, {timeFormatter.format(dataSet.dt*1000)}</h5>
           <!-- <h5 class="card-title">{dataSet.name}</h5> -->
         </div>
 

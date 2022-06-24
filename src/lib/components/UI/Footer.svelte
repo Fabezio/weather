@@ -1,11 +1,11 @@
 <script>
 
 
-  import {Nav} from "sveltestrap"
+  // import {Nav} from "sveltestrap"
   import {theme} from "$lib/store/theme"
   const gitUrl = "github.com"
   const author = "Fabezio";
-  const repository = "sveltekit_basic_template";
+  const repository = "weather";
   // const  ghUrl = "https://github.com/Fabezio/sveltekit_basic_template"
   // const {bg, txt} = $theme
   console.log ($theme)
@@ -15,11 +15,7 @@
   <!-- <Nav> -->
 
     <div class="row text-center">
-      <div class="col">
-        visit <a href="https://kit.svelte.dev" class="text-{$theme.
-// @ts-ignore
-        linkColor}">kit.svelte.dev</a> to learn SvelteKit
-      </div>
+      
       <div class="col">
         <a href="https://{gitUrl}/{author}/{repository}" class="text-{$theme.linkColor}" target="_blank"
           >code source

@@ -117,9 +117,10 @@
 <form action="" on:submit|preventDefault={validateCities} >
 
 <div >
-  <label for="cities">Entrer un nom de ville (plusieurs séparées par des espaces)</label>
+  <label for="cities">Entrer un nom de ville (ou plusieurs séparées par des virgules)</label>
   <input class="form-control"  id="cities" on:change={()=> entry} name="cities" bind:value={entry} rows=50/>
 
 </div>
-<Button type="submit" color="warning" >valider</Button>
+
+<Button type="submit" size="lg" color="primary" class="my-3" block >valider</Button>
 </form>

@@ -1,6 +1,6 @@
 <script>
-  import Spinner from "$lib/components/UI/Spinner.svelte"
-  import {Container} from 'sveltestrap';
+  // import Spinner from "$lib/components/UI/Spinner.svelte"
+  import {Container, Spinner, Progress} from 'sveltestrap';
   import Head from "$lib/components/UI/Head.svelte";
   import Form from "$lib/components/UX/Form.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte";
@@ -39,11 +39,22 @@
   $: console.log(cities)
 </script>
 <Head title="Quel temps fait-il?" />
-<Spinner db={$weather} />
-<Form />
-<!-- <Container > -->
+{#if !$weather.length}
+<!-- <div class="mx-auto"> -->
+  <Progress animated color={cities.length>0 ? "success" : "warning"} value="100" />
+  <!-- <Progress animated color="success" value={cities && 100} /> -->
+  <!-- <Spinner color={"success"} size="lg" /> -->
+
+<!-- </div> -->
+  
+{/if}
+<Container >
+  <div class="mx-1">
+    <Form />
+
+  </div>
 {#each $weather as fc}
-<div class="card bg-dark text-light my-3 mx-1" width="100%">
+<div class="card bg-secondary text-light my-3 mx-1" width="100%">
   <Forecast {fc}>
     <div class="card-header">
       <h3 class="city"><i class="bi-geo mr-2"></i>{fc.city.toUpperCase()}</h3>
@@ -59,4 +70,4 @@
   </div>
   
   {/each}
-<!-- </Container> -->
+</Container>
