@@ -240,6 +240,11 @@ ajv@^6.12.3:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+angles@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/angles/-/angles-0.2.4.tgz#adf86b35e861ef96e1bed237d7f53870aa6ccf55"
+  integrity sha512-TGV9dkpl/ITbhzRB1hL7In5cgkilsYk2tD3uuruxk4sJGI1h8njvEuV7dM9e+EnOnc2lHFX9vzZmhZEhKlXjeA==
+
 ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"

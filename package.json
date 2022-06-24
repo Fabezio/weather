@@ -27,6 +27,7 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
+    "angles": "^0.2.4",
     "axios": "^0.26.0",
     "bootstrap-icons": "^1.8.3",
     "bootstrap-scss": "^4.6.1",
