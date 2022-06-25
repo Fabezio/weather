@@ -1,13 +1,13 @@
 <script>
   import {Button }from "sveltestrap" 
-  import {weather} from "$lib/store/forecast"
+  import {weather, cities} from "$lib/store/forecast"
   import axios from "axios"
   const apiKey = "f6f03d4b430d972622542e12b63f852d";
 
   let entry = "";
-  let cities = []
+
   function validateCities() {
-  if (entry.length ) cities = entry.split(", ")
+  if (entry.length ) $cities = entry.split(", ")
 }
   function handleKey(e) {
     if (e.Key == "Enter") validateCities()
@@ -18,8 +18,8 @@
   
   async function fetchData() {
      $weather = [];
-    console.log(cities)
-    cities.map(async city => {
+    console.log($cities)
+    $cities.map(async city => {
 
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.trim()}&appid=${apiKey}&units=metric&lang=fr`;
       const { data } = await axios.get(url);
@@ -108,7 +108,7 @@
     
     return $weather;
   }
-  $: if(cities.length) fetchData()
+  $: if($cities.length) fetchData()
 
 </script>
 

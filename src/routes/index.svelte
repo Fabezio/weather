@@ -4,12 +4,12 @@
   import Head from "$lib/components/UI/Head.svelte";
   import Form from "$lib/components/UX/Form.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte";
-  import {weather} from "$lib/store/forecast"
+  import {weather, cities} from "$lib/store/forecast"
   
   // let cityForecast;
   const apiKey = "f6f03d4b430d972622542e12b63f852d";
   let entry = "";
-  let cities = []
+  $cities = []
   function convertCoord(val, neg, pos) {
     let mn;
     let s;
@@ -36,19 +36,16 @@
 
     return newCoord;
   }
-  $: console.log(cities)
+  $: console.log($cities.length)
 </script>
 <Head title="Quel temps fait-il?" />
-{#if !$weather.length}
-<!-- <div class="mx-auto"> -->
-  <Progress animated color={cities.length>0 ? "success" : "warning"} value="100" />
-  <!-- <Progress animated color="success" value={cities && 100} /> -->
-  <!-- <Spinner color={"success"} size="lg" /> -->
-
-<!-- </div> -->
-  
-{/if}
-<Container >
+<Container lg>
+  {#if !$weather.length }
+  <!-- <div class="mx-auto"> -->
+    <Progress class="mx-1" animated color={$cities.length ? "success" : "warning"} value="100" />
+ 
+    {/if}
+    
   <div class="mx-1">
     <Form />
 
