@@ -8,10 +8,7 @@
   import Nav from '$lib/components/header/Nav.svelte';
   import Footer from "$lib/components/UI/Footer.svelte"
   $theme = {txt: "dark", bg: "light", linkColor: "danger"}
-  // $theme.txt="dark"
-  // $theme.bg="light"
-  // $theme.linkColor="danger"
-// $: console.log($page.url.pathname)
+  
 $: innerWidth = 0
 $: innerHeight = 0
 // $: outerHeight = 0
@@ -21,18 +18,15 @@ $: console.log(innerWidth, innerHeight)
 <Breakpoints />
 <Styles />
 <!-- <Nav /> -->
-<!-- <Container> -->
-  <div class="layout">
 
-    
+<div class="layout">
     <main >
       <slot />
-      
     </main>
-    
-    <!-- </Container> -->
+
     <Footer />
-  </div>
+</div>
+
 <style>
   .layout {
     min-height: 100vh ;

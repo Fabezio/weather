@@ -22,12 +22,10 @@
 
 <pre>
   {url}
-  <!-- {forecast} -->
+
   {JSON.stringify(forecast,null, 2)}
 
 </pre>
-
-<!-- </div> -->
 
 <style>
 

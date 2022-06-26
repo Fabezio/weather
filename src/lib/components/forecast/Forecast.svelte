@@ -3,8 +3,6 @@
 
 export let fc
 
-// export let hasFooter =false
-
 let selected = false
 let dataToDisplay = {}
 

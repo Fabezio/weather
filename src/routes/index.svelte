@@ -8,7 +8,7 @@
   
   // let cityForecast;
   const apiKey = "f6f03d4b430d972622542e12b63f852d";
-  let entry = "";
+
   $cities = []
   function convertCoord(val, neg, pos) {
     let mn;
@@ -39,32 +39,27 @@
   $: console.log($cities.length)
 </script>
 <Head title="Quel temps fait-il?" />
-<Container lg>
+<!-- <Container md> -->
   {#if !$weather.length }
   <!-- <div class="mx-auto"> -->
     <Progress class="mx-1" animated color={$cities.length ? "success" : "warning"} value="100" />
- 
-    {/if}
-    
+  {/if}
   <div class="mx-1">
     <Form />
-
   </div>
-{#each $weather as fc}
-<div class="card bg-secondary text-light my-3 mx-1" width="100%">
-  <Forecast {fc}>
-    <div class="card-header">
-      <h3 class="city"><i class="bi-geo mr-2"></i>{fc.city.toUpperCase()}</h3>
-      <h3 class="coords"><i class="bi-geo-alt mr-2"></i>
-        <em>
-          {convertCoord(fc.coords.lat, "S", "N")} / {convertCoord(fc.coords.lon, "O", "E")}
+ 
+  {#each $weather as fc}
+  <div class="card bg-secondary text-light my-3 mx-1" width="100%">
+    <Forecast {fc}>
+      <div class="card-header">
+        <h3 class="city"><i class="bi-geo mr-2"></i>{fc.city.toUpperCase()}</h3>
+        <h3 class="coords"><i class="bi-geo-alt mr-2"></i>
+          <em>
+            {convertCoord(fc.coords.lat, "S", "N")} / {convertCoord(fc.coords.lon, "O", "E")}
           </em>
-      </h3>
-
-    </div>
-
-  </Forecast >
+        </h3>
+      </div>
+    </Forecast >
   </div>
-  
-  {/each}
-</Container>
+{/each}
+<!-- </Container> -->
