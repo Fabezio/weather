@@ -18,7 +18,7 @@ $: {
 // $: console.log(innerWidth, innerHeight)
 // $: console.log("largeur:",innerWidth)
 // $: console.log("hauteur:", innerHeight)
-// $: console.log("breakpoint", $bk)
+$: console.log("breakpoint", $bk)
 // $: console.log()
 </script>
 
