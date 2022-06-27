@@ -7,7 +7,7 @@
   let entry = "";
 
   function validateCities() {
-  if (entry.length ) $cities = entry.split(", ")
+  if (entry.length ) $cities = entry.split(",")
 }
   function handleKey(e) {
     if (e.Key == "Enter") validateCities()
@@ -21,7 +21,7 @@
     console.log($cities)
     $cities.map(async city => {
 
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.trim()}&appid=${apiKey}&units=metric&lang=fr`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.trim().toLowerCase()}&appid=${apiKey}&units=metric&lang=fr`;
       const { data } = await axios.get(url);
       console.log(url)
   

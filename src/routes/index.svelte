@@ -1,6 +1,7 @@
 <script>
   // import Spinner from "$lib/components/UI/Spinner.svelte"
-  import {Container, Spinner, Progress} from 'sveltestrap';
+  import {Spinner, Progress} from 'sveltestrap';
+  import Container from '$lib/components/UI/Container.svelte';
   import Head from "$lib/components/UI/Head.svelte";
   import Form from "$lib/components/UX/Form.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte";

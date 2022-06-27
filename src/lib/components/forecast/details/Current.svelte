@@ -1,6 +1,7 @@
 <script>
   import CurrentItem from './CurrentItem.svelte'
-  import {Col, Row, Container} from "sveltestrap"
+  import {Col, Row} from "sveltestrap"
+  import Container from '$lib/components/UI/Container.svelte';
   import angles from "angles"
   import {bk} from "$lib/store/breakpoints"
   import {dateFormatter, timeFormatter} from "$lib/utils/dateFormats";

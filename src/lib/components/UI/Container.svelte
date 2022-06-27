@@ -1,4 +1,5 @@
 <script>
+  import {bk} from "$lib/store/breakpoints"
 $:innerWidth=0
 </script>
   <!-- <svelte:window bind:innerWidth={innerWidth} /> -->
@@ -8,7 +9,7 @@ $:innerWidth=0
   {innerWidth}
 
 </pre> -->
-<div class="container">
+<div class="container-{$bk}">
   <slot />
 </div>
 <!-- <style>

@@ -1,6 +1,7 @@
 <script>
   import * as Details from "./details"
-  import {Row, Col , Container} from "sveltestrap"
+  import {Row, Col } from "sveltestrap"
+  import Container from '$lib/components/UI/Container.svelte';
 
 export let fc
 
