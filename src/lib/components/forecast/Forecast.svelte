@@ -1,7 +1,7 @@
 <script>
   import * as Details from "./details"
   import {Row, Col } from "sveltestrap"
-  import Container from '$lib/components/UI/Container.svelte';
+  import Flex from '$lib/components/UI/Flex.svelte';
 
 export let fc
 
@@ -33,12 +33,12 @@ function swapData(index) {
   {/if}
 </div>
 <div class="card-footer text-center">
-  <Row >
+  <Flex >
     <!-- <div class="mx-auto"></div> -->
     {#each fc.days as day, i}
-    <Col xs="auto" >
+    <!-- <Col xs="auto" > -->
       <Details.Daily on:select="{()=>swapData(i)}" {day} />
-    </Col>
+    <!-- </Col> -->
     {/each}
-  </Row>
+  </Flex>
 </div>

@@ -9,7 +9,7 @@
   // console.table(day)
 </script>
 
-<div on:click={()=> dispatch("select")} class="col-md">
+<div on:click={()=> dispatch("select")} class="detail">
   <figure>
     <img src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/{day.weather.icon}.png' width="100" alt="icone" >
     <figcaption class="text-center">
@@ -19,3 +19,11 @@
   </figure>
 
 </div>
+
+<style>
+  .detail {
+    max-width: 150px;
+  }
+</style>
+
+
