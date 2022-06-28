@@ -5,8 +5,19 @@
   import Head from "$lib/components/UI/Head.svelte";
   import Form from "$lib/components/UX/Form.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte";
-  import {weather, cities} from "$lib/store/forecast"
-  
+  import {weather, cities, detail, getCoords} from "$lib/store/forecast"
+  import GetPosition from '$lib/components/UX/GetPosition.svelte';
+  // $detail = {}
+  // $: if ($detail.length) co
+  // const {coords} = $detail
+  // $: if ($detail.coords) {
+
+  //   $coords = {
+  //     lat: $detail.coords.latitude,
+  //     lon: $detail.coords.longitude,
+  //   }
+  // }
+  $: if ($getCoords.lat != undefined) console.log($getCoords)
   // let cityForecast;
   const apiKey = "f6f03d4b430d972622542e12b63f852d";
 
@@ -19,6 +30,7 @@
     else s2 = pos
     const absVal = Math.abs(val)
     const deg = Math.floor(absVal );
+
 
     let newCoord = `${deg}°`;
     if (absVal - deg != 0) {
@@ -38,16 +50,21 @@
     return newCoord;
   }
   $: console.log($cities.length)
+  const gotPos = $cities.length || $getCoords.lat != undefined
 </script>
 <Head title="Quel temps fait-il?" />
+
+<GetPosition />
 <!-- <Container md> -->
   {#if !$weather.length }
   <!-- <div class="mx-auto"> -->
-    <Progress class="mx-1" animated color={$cities.length ? "success" : "warning"} value="100" />
+    <Progress class="mx-1" animated color={gotPos ? "success" : "warning"} value="100" />
   {/if}
+  {#if $getCoords.lat == undefined}
   <div class="mx-1">
     <Form />
   </div>
+  {/if  }
  
   {#each $weather as fc}
   <div class="card bg-secondary text-light my-3 mx-1" width="100%">
