@@ -7,6 +7,16 @@ export let fc
 
 let selected = false
 let dataToDisplay = {}
+let maxElements = 2
+
+$: innerWidth = 0
+$: console.log(innerWidth)
+$: if (innerWidth >= 576) maxElements = 3
+$: if (innerWidth >= 768) maxElements = 4
+$: if (innerWidth >= 992) maxElements = 6
+$: if (innerWidth >= 1200) maxElements = 7
+$: if (innerWidth >= 1400) maxElements = 8
+
 
 
 function swapData(index) {
@@ -23,6 +33,8 @@ function swapData(index) {
 }
 </script>
 
+<svelte:window bind:innerWidth />
+
 <slot />
 <div class="card-body">
 
@@ -33,11 +45,13 @@ function swapData(index) {
   {/if}
 </div>
 <div class="card-footer text-center">
-  <Flex >
+  <Flex wrap >
     <!-- <div class="mx-auto"></div> -->
     {#each fc.days as day, i}
     <!-- <Col xs="auto" > -->
+      {#if i < maxElements}
       <Details.Daily on:select="{()=>swapData(i)}" {day} />
+        {/if}
     <!-- </Col> -->
     {/each}
   </Flex>

@@ -46,8 +46,6 @@
     case "xxl": 
       width = 2
       break
-    // default: 
-    //   width= 
     
 
   }
@@ -57,37 +55,43 @@
 <Container >
   <!-- <Flex display="start"> -->
     <Row>
-      <Col xs="12" md="2">
-        <figure class="" >
-          <img src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/{dataSet.weather.icon}.png' class="card-img-left" alt="icone" >
-        </figure>
+      <Col xs="12" md="1">
+        <img src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/{dataSet.weather.icon}.png' class="card-img-top" alt="icone" >
+        <!-- <figure class="" >
+        </figure> -->
       </Col>
-      <Col xs="12" md="10">
+      <Col xs="12" md="11">
 
         <div>
           
-          <h5 class="card-title " ><i class="mr-3 bi-calendar" ></i>{dateFormatter.format(dataSet.dt*1000)}, {timeFormatter.format(dataSet.dt*1000)}</h5>
-          <Flex display="between" >
-            <div class="m-2" >
+          <h5 class="card-title pl-0" ><i class="mr-3 bi-calendar" ></i>{dateFormatter.format(dataSet.dt*1000)}, {timeFormatter.format(dataSet.dt*1000)}</h5>
+          <Flex gap="3" wrap display="start" >
+            <div>
               <CurrentItem icon="cloud-sun-fill" color="info" >{dataSet.weather.description}</CurrentItem>
               <CurrentItem icon="thermometer" >{dataSet.temp}°C</CurrentItem>
               <CurrentItem icon="thermometer-snow" >{dataSet.feels_like}°C</CurrentItem>
             </div>
-            <div class="m-2" >
-              <CurrentItem icon="sun" color="warning" >{timeFormatter.format(dataSet.sunrise*1000)}</CurrentItem>
-              <CurrentItem icon="brightness-low-fill" color="dark" >{timeFormatter.format(dataSet.sunset*1000)}</CurrentItem>
-              <CurrentItem icon="moisture" color="info" >{dataSet.humidity}%</CurrentItem>
+            <div>
+              <CurrentItem icon="sun" color="warning" >{timeFormatter.format(dataSet.sunrise*1000)} - 
+              <!-- </CurrentItem>
+              <CurrentItem icon="brightness-low-fill" color="dark" > -->
+                {timeFormatter.format(dataSet.sunset*1000)}</CurrentItem>
+              <CurrentItem icon="moisture" color="info" >{dataSet.humidity} mm</CurrentItem>
+              <CurrentItem icon="speedometer" >{dataSet.pressure} hPa</CurrentItem>
             </div>
             
-            <div class="m-2" >
-              <CurrentItem icon="speedometer" >{dataSet.pressure} hPa</CurrentItem>
+            <div>
               <CurrentItem icon="droplet" >{dataSet.dew_point}%</CurrentItem>
               <CurrentItem icon="cloud" >{dataSet.clouds}%</CurrentItem>
+              <CurrentItem icon="wind" >
+                 {dataSet.wind_speed} Km/h <!-- &rArr; --> {convertDeg(dataSet.wind_deg)}
+                <!-- {dataSet.wind_speed} Km/h <span class="bi bi-compass" style="transform: rotate({(dataSet.wind_deg)}deg)" -->
+              </CurrentItem>
             </div>
-            <div class="m-2" >
-              <CurrentItem icon="wind" >{dataSet.wind_speed} Km/h</CurrentItem>
-              <CurrentItem icon="compass" >{convertDeg(dataSet.wind_deg)}</CurrentItem>
-              <CurrentItem icon="sunglasses" > {dataSet.uvi}</CurrentItem>
+            <div>
+              <!-- <CurrentItem icon="compass" >
+              </CurrentItem> -->
+              <!-- <CurrentItem icon="sunglasses" >{dataSet.uvi}</CurrentItem> -->
             </div>
           </Flex>
           
@@ -98,4 +102,3 @@
   <!-- </Flex> -->
   </Container>
   
-  <div></div>
