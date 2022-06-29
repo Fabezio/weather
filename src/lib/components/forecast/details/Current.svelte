@@ -38,27 +38,27 @@
       </Row>
       
       <Row>
-        <Col>
+        <div class="col-3" >
           <CurrentItem icon="cloud-sun-fill" color="info" >{dataSet.weather.description}</CurrentItem>
           <CurrentItem icon="thermometer" >{dataSet.temp}°C</CurrentItem>
           <CurrentItem icon="thermometer-snow" >{dataSet.feels_like}°C</CurrentItem>
-        </Col>
-        <Col>
+        </div>
+        <div class="col-2" >
           <CurrentItem icon="sun" color="warning" >{timeFormatter.format(dataSet.sunrise*1000)}</CurrentItem>
           <CurrentItem icon="brightness-low-fill" color="dark" >{timeFormatter.format(dataSet.sunset*1000)}</CurrentItem>
           <CurrentItem icon="moisture" color="info" >{dataSet.humidity}%</CurrentItem>
-        </Col>
+        </div>
         
-        <Col>
+        <div class="col-2" >
           <CurrentItem icon="speedometer" >{dataSet.pressure} hPa</CurrentItem>
           <CurrentItem icon="droplet" >{dataSet.dew_point}%</CurrentItem>
           <CurrentItem icon="cloud" >{dataSet.clouds}%</CurrentItem>
-        </Col>
-        <Col>
+        </div>
+        <div class="col-2" >
           <CurrentItem icon="wind" >{dataSet.wind_speed} Km/h</CurrentItem>
           <CurrentItem icon="compass" >{convertDeg(dataSet.wind_deg)}</CurrentItem>
           <CurrentItem icon="sunglasses" > {dataSet.uvi}</CurrentItem>
-        </Col>
+        </div>
       </Row>
     </Container>
     </div>
