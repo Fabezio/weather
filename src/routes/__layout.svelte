@@ -1,5 +1,6 @@
 <script lang="ts">
-  import {Styles, Container} from "sveltestrap"
+  import {Styles} from "sveltestrap"
+  import Container from "$lib/components/UI/Container.svelte";
   import 'bootstrap-scss/bootstrap.scss';
   import 'bootstrap-icons/font/bootstrap-icons.css';
   import {theme} from "$lib/store/theme"
@@ -20,9 +21,9 @@ $: console.log(innerWidth, innerHeight)
 <!-- <Nav /> -->
 
 <div class="layout">
-    <main >
+    <Container >
       <slot />
-    </main>
+    </Container>
 
     <Footer />
 </div>
