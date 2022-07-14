@@ -46,6 +46,11 @@
     case "xxl": 
       width = 2
       break
+<<<<<<< HEAD
+=======
+    // default: 
+    //   width= 
+>>>>>>> 15e8d16 (détail affichage courant: flex)
     
 
   }
@@ -55,6 +60,7 @@
 <Container >
   <!-- <Flex display="start"> -->
     <Row>
+<<<<<<< HEAD
       <Col xs="12" md="1">
         <img src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/{dataSet.weather.icon}.png' class="card-img-top" alt="icone" >
         <!-- <figure class="" >
@@ -67,10 +73,25 @@
           <h5 class="card-title pl-0" ><i class="mr-3 bi-calendar" ></i>{dateFormatter.format(dataSet.dt*1000)}, {timeFormatter.format(dataSet.dt*1000)}</h5>
           <Flex gap="3" wrap display="start" >
             <div>
+=======
+      <Col xs="12" md="2">
+        <figure class="" >
+          <img src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/{dataSet.weather.icon}.png' class="card-img-left" alt="icone" >
+        </figure>
+      </Col>
+      <Col xs="12" md="10">
+
+        <div>
+          
+          <h5 class="card-title " ><i class="mr-3 bi-calendar" ></i>{dateFormatter.format(dataSet.dt*1000)}, {timeFormatter.format(dataSet.dt*1000)}</h5>
+          <Flex display="between" >
+            <div class="m-2" >
+>>>>>>> 15e8d16 (détail affichage courant: flex)
               <CurrentItem icon="cloud-sun-fill" color="info" >{dataSet.weather.description}</CurrentItem>
               <CurrentItem icon="thermometer" >{dataSet.temp}°C</CurrentItem>
               <CurrentItem icon="thermometer-snow" >{dataSet.feels_like}°C</CurrentItem>
             </div>
+<<<<<<< HEAD
             <div>
               <CurrentItem icon="sun" color="warning" >{timeFormatter.format(dataSet.sunrise*1000)} - 
               <!-- </CurrentItem>
@@ -92,6 +113,23 @@
               <!-- <CurrentItem icon="compass" >
               </CurrentItem> -->
               <!-- <CurrentItem icon="sunglasses" >{dataSet.uvi}</CurrentItem> -->
+=======
+            <div class="m-2" >
+              <CurrentItem icon="sun" color="warning" >{timeFormatter.format(dataSet.sunrise*1000)}</CurrentItem>
+              <CurrentItem icon="brightness-low-fill" color="dark" >{timeFormatter.format(dataSet.sunset*1000)}</CurrentItem>
+              <CurrentItem icon="moisture" color="info" >{dataSet.humidity}%</CurrentItem>
+            </div>
+            
+            <div class="m-2" >
+              <CurrentItem icon="speedometer" >{dataSet.pressure} hPa</CurrentItem>
+              <CurrentItem icon="droplet" >{dataSet.dew_point}%</CurrentItem>
+              <CurrentItem icon="cloud" >{dataSet.clouds}%</CurrentItem>
+            </div>
+            <div class="m-2" >
+              <CurrentItem icon="wind" >{dataSet.wind_speed} Km/h</CurrentItem>
+              <CurrentItem icon="compass" >{convertDeg(dataSet.wind_deg)}</CurrentItem>
+              <CurrentItem icon="sunglasses" > {dataSet.uvi}</CurrentItem>
+>>>>>>> 15e8d16 (détail affichage courant: flex)
             </div>
           </Flex>
           
@@ -102,3 +140,7 @@
   <!-- </Flex> -->
   </Container>
   
+<<<<<<< HEAD
+=======
+  <div></div>
+>>>>>>> 15e8d16 (détail affichage courant: flex)

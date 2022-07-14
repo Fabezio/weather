@@ -5,4 +5,8 @@
 
 </script>
 
+<<<<<<< HEAD
 <div class="text-light fs-{$bk == "xs" ? 6 : 5} px-3"><i class="mr-3 bi-{icon} text-{color}"></i><slot /></div>
+=======
+<div class="text-light fs-5 px-3"><i class="mr-3 bi-{icon} text-{color}"></i><slot /></div>
+>>>>>>> 15e8d16 (détail affichage courant: flex)
