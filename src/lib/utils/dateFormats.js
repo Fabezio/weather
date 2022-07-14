@@ -6,10 +6,10 @@ export const dateFormatter = Intl.DateTimeFormat("fr", {
   });
   
 export const dateCompactFormatter = Intl.DateTimeFormat("fr", {
-    // weekday: "narrow",
-    day: "2-digit",
-    month: "2-digit",
-    // year: "2-digit",
+  day: "2-digit",
+  month: "2-digit",
+  weekday: "short",
+  // year: "2-digit",
   });
 export const timeFormatter = Intl.DateTimeFormat("fr", {
     // weekday: "narrow",

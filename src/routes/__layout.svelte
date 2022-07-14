@@ -27,7 +27,9 @@ $: console.log(innerWidth, innerHeight)
     <Footer />
 </div>
 
-<style>
+<style lang="scss" >
+  // $success: #28a745 !important;
+  // $primary: cyan !important;
   .layout {
     min-height: 100vh ;
     display: flex;

@@ -6,6 +6,7 @@
   import Form from "$lib/components/UX/Form.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte";
   import {weather, cities} from "$lib/store/forecast"
+  import Theme from "$lib/components/UI/Theme.svelte"
   
   // let cityForecast;
   const apiKey = "f6f03d4b430d972622542e12b63f852d";
@@ -40,6 +41,7 @@
   $: console.log($cities.length)
 </script>
 <Head title="Quel temps fait-il?" />
+<Theme />
 <!-- <Container md> -->
   {#if !$weather.length }
   <!-- <div class="mx-auto"> -->

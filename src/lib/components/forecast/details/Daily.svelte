@@ -22,7 +22,8 @@
 
 <style>
   .detail {
-    max-width: 150px;
+    max-width: 200px;
+    min-width: 150px;
   }
 </style>
 
