@@ -7,7 +7,7 @@ export let fc
 
 let selected = false
 let dataToDisplay = {}
-let maxElements = 2
+$: maxElements = 2
 
 $: innerWidth = 0
 $: console.log(innerWidth)

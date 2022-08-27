@@ -1,12 +1,13 @@
 <script>
   // import Spinner from "$lib/components/UI/Spinner.svelte"
-  import {Spinner, Progress} from 'sveltestrap';
+  import {Spinner, Progress, Carousel, CarouselControl, CarouselItem} from 'sveltestrap';
   import Container from '$lib/components/UI/Container.svelte';
   import Head from "$lib/components/UI/Head.svelte";
   import Form from "$lib/components/UX/Form.svelte"
   import Forecast from "$lib/components/forecast/Forecast.svelte";
   import {weather, cities} from "$lib/store/forecast"
   import Theme from "$lib/components/UI/Theme.svelte"
+  $: activeIndex = 0
   
   // let cityForecast;
   const apiKey = "f6f03d4b430d972622542e12b63f852d";
@@ -51,7 +52,11 @@
     <Form />
   </div>
  
-  {#each $weather as fc}
+  <Carousel items={$weather} bind:activeIndex  >
+    <div class="carousel-inner">
+      
+  {#each $weather as fc, i}
+  <CarouselItem bind:activeIndex itemIndex={i} >
   <div class="card bg-secondary text-light my-3 mx-1" width="100%">
     <Forecast {fc}>
       <div class="card-header">
@@ -64,5 +69,10 @@
       </div>
     </Forecast >
   </div>
-{/each}
+  </CarouselItem>
+  {/each}
+  </div>
+  <CarouselControl direction="prev" bind:activeIndex items={$weather} />
+ <CarouselControl direction="next" bind:activeIndex items={$weather} />
+</Carousel>
 <!-- </Container> -->
